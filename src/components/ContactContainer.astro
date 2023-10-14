@@ -1,9 +1,23 @@
 <div class="flex flex-col justify-center items-center">
   <p class="m-5 p-5 font-publicSans font-semibold">
-    For inquiries drop me a line at
+    My email is
     <a href="mailto:joshuarodriguesdev@gmail.com">
       <span class="underline"> joshuarodriguesdev@gmail.com</span>
     </a>
   </p>
-  
+  <p>You can drop me a line below</p>
+  <form
+    class="m-5 p-5 border-black bg-yellow-400 border-4 neo-brutal-shadow
+  hover:neo-brutal-shadow-active font-bold"
+    action=""
+  >
+    <label class="m-2" for="from">From :</label>
+    <input required placeholder="example@email.com" class="m-2 p-2 border-black border-4 neo-brutal-shadow
+    hover:neo-brutal-shadow-active block bg-indigo-300 placeholder-black" type="email" name="from" id="from" />
+    <label class="m-2" for="body">Message :</label>
+    <textarea required placeholder="Say something nice..." class="m-2 p-2 border-black border-4 neo-brutal-shadow
+    hover:neo-brutal-shadow-active bg-indigo-300  placeholder-black" name="body" id="body" cols="30" rows="10"></textarea>
+    <button class="m-2 p-2 border-black border-4 neo-brutal-shadow
+    hover:neo-brutal-shadow-active bg-green-500 font-extrabold" type="submit">Send</button>
+  </form>
 </div>
