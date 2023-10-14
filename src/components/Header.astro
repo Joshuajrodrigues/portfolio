@@ -1,8 +1,13 @@
 ---
 import Title from "./Title.astro";
+import Button from "./Button.astro"
 ---
 
-<header class=" flex items-center justify-center  md:h-64">
+<header class=" flex flex-col items-center justify-center bg-yellow-400">
   {<Title/>}
+  <div>
+	{<Button/>}
+  </div>
+ 
 </header>
 

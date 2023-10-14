@@ -5,6 +5,7 @@ specifiers:
   '@astrojs/rss': ^3.0.0
   '@astrojs/sitemap': ^3.0.1
   '@astrojs/tailwind': ^5.0.2
+  '@fontsource-variable/public-sans': ^5.0.14
   '@fontsource/rammetto-one': ^5.0.15
   '@fontsource/sigmar-one': ^5.0.15
   astro: ^3.2.4
@@ -15,6 +16,7 @@ dependencies:
   '@astrojs/rss': 3.0.0
   '@astrojs/sitemap': 3.0.1
   '@astrojs/tailwind': 5.0.2_not6qeptknfdqib5riidevaymm
+  '@fontsource-variable/public-sans': 5.0.14
   '@fontsource/rammetto-one': 5.0.15
   '@fontsource/sigmar-one': 5.0.15
   astro: 3.2.4
@@ -766,6 +768,10 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@fontsource-variable/public-sans/5.0.14:
+    resolution: {integrity: sha512-cSIE/4llneUmvID/5pjHp+zxqtZZ3vnI5KGBFbcC7SyhxRxqfsUFJ44EhSxtO0EdwJOBu/hAVDtn3a9kgkU++w==}
+    dev: false
 
   /@fontsource/rammetto-one/5.0.15:
     resolution: {integrity: sha512-1VdcBKH0f74SpybI8pZW4KTe6V7iSWci0rAJXvKU13h28kaMusPUZ9MZIJN472RiPUtgCxiJsog3Yk/McMIISg==}

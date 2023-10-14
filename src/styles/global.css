@@ -1,5 +1,15 @@
-@import '@fontsource/rammetto-one';
-
+@import "@fontsource/rammetto-one";
+@import "@fontsource-variable/public-sans";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .neo-brutal-shadow {
+    box-shadow: 4px 2px black;
+  }
+  .neo-brutal-shadow-active{
+    box-shadow: 2px 0px black;
+    transform: translateY(2px)
+  }
+}
