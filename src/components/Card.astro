@@ -1,12 +1,22 @@
 ---
-const { text,defaultColor,flip=false } = Astro.props;
-
-
+let { text, defaultColor, flip = false } = Astro.props;
 ---
 
+<script>
+  const cards = document.querySelectorAll("p");
+  cards.forEach((card) => {
+    card.addEventListener('click', () => {
+      console.log("cliecked",card.classList);
+      
+    });
+  });
+</script>
 <p
+  id="about-card"
   class={`m-5 p-5 font-semibold font-publicSans border-black border-2 neo-brutal-shadow
-hover:neo-brutal-shadow-active ${flip ?"-rotate-2":"rotate-2"} transition ease-in-out ${defaultColor}`}
+hover:neo-brutal-shadow-active ${
+    flip ? "-rotate-2" : "rotate-2"
+  } transition duration-500 ease-in-out ${defaultColor}`}
 >
   {text}
 </p>
