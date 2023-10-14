@@ -1,10 +1,12 @@
 ---
- const {text} = Astro.props
+const { text,defaultColor,flip=false } = Astro.props;
+
+
 ---
 
 <p
-  class="m-5 p-5 font-semibold font-publicSans border-black border-2 neo-brutal-shadow
-hover:neo-brutal-shadow-active -rotate-3 bg-pink-500 transition ease-in-out"
+  class={`m-5 p-5 font-semibold font-publicSans border-black border-2 neo-brutal-shadow
+hover:neo-brutal-shadow-active ${flip ?"-rotate-2":"rotate-2"} transition ease-in-out ${defaultColor}`}
 >
   {text}
 </p>
