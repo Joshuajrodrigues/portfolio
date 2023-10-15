@@ -1,35 +1,67 @@
 <script>
-  let myEmail = document.getElementById("email");
   let copy = document.getElementById("copy");
+  let copyIcon = document.getElementById("copy-icon");
+  let copiedIcon = document.getElementById("copied-icon");
+  copiedIcon!.style.display = "none";
+  copy?.addEventListener("click", () => {
+    navigator.clipboard.writeText("joshuarodriguesdev@gmail.com");
+    copyIcon!.style.display = "none";
+    copiedIcon!.style.display = "inline";
+    setTimeout(() => {
+      copyIcon!.style.display = "inline";
+      copiedIcon!.style.display = "none";
+    }, 5000);
+  });
 </script>
 
-<div class="p-2 bg-pink-400 flex flex-col justify-center items-center">
+<div class="p-2 bg-yellow-400 flex flex-col justify-center items-center">
   <p class="font-bold">My email:</p>
-  <div
-    class="m-2 p-2 border-black border-4 neo-brutal-shadow
-hover:neo-brutal-shadow-active transition duration-500 block bg-indigo-300"
-  >
-    <a href="mailto:joshuarodriguesdev@gmail.com">
-      <span class="font-bold" id="email" class="underline">
-        joshuarodriguesdev@gmail.com</span
-      >
-    </a>
-    <svg
-      id="copy"
-      class="inline ml-2"
-      xmlns="http://www.w3.org/2000/svg"
-      width="32"
-      height="32"
-      fill="#000000"
-      viewBox="0 0 256 256"
-      ><path
-        d="M184,64H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H184a8,8,0,0,0,8-8V72A8,8,0,0,0,184,64Zm-8,144H48V80H176ZM224,40V184a8,8,0,0,1-16,0V48H72a8,8,0,0,1,0-16H216A8,8,0,0,1,224,40Z"
-      ></path></svg
+  <div class="flex justify-center items-center">
+    <div
+      class="m-2 p-2 w-[230px] border-black border-4 neo-brutal-shadow
+  hover:neo-brutal-shadow-active transition duration-500 block bg-indigo-300"
     >
+      <a href="mailto:joshuarodriguesdev@gmail.com">
+        <span class="font-bold text-sm" id="email" class="underline">
+          joshuarodriguesdev@gmail.com</span
+        >
+      </a>
+    </div>
+    <button
+      id="copy"
+      class="flex items-center justify-center bg-indigo-300 border-black border-4 neo-brutal-shadow
+    hover:neo-brutal-shadow-active transition duration-500"
+    >
+      <svg
+        id="copy-icon"
+        class="inline"
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="40"
+        fill="#000000"
+        viewBox="0 0 256 256"
+        ><path
+          d="M184,64H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H184a8,8,0,0,0,8-8V72A8,8,0,0,0,184,64Zm-8,144H48V80H176ZM224,40V184a8,8,0,0,1-16,0V48H72a8,8,0,0,1,0-16H216A8,8,0,0,1,224,40Z"
+        ></path></svg
+      >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        id="copied-icon"
+        class="inline"
+        width="32"
+        height="40"
+        fill="#000000"
+        viewBox="0 0 256 256"
+        ><path
+          d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM224,48V208a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V48A16,16,0,0,1,48,32H208A16,16,0,0,1,224,48ZM208,208V48H48V208H208Z"
+        ></path></svg
+      >
+    </button>
   </div>
+
   <p class="font-bold">You can drop me message below</p>
   <form
-    class="m-5 p-5 border-black bg-yellow-400 border-4 neo-brutal-shadow
+    class="border-black bg-orange-400 border-4 neo-brutal-shadow
   hover:neo-brutal-shadow-active font-bold"
     action=""
   >
@@ -47,7 +79,7 @@ hover:neo-brutal-shadow-active transition duration-500 block bg-indigo-300"
     <textarea
       required
       placeholder="Say something nice..."
-      class="m-2 p-2 border-black border-4 neo-brutal-shadow
+      class="m-2 p-2 w-64 border-black border-4 neo-brutal-shadow
     hover:neo-brutal-shadow-active bg-indigo-300 placeholder-black transition duration-500"
       name="body"
       id="body"
