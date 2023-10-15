@@ -12,6 +12,21 @@
       copiedIcon!.style.display = "none";
     }, 5000);
   });
+
+  let form = document.getElementById("mail");
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    //@ts-ignore
+    const data = new FormData(form);
+    await fetch("/api/mail", {
+      method: "post",
+      body: data,
+    }).then((resp) => {
+      console.log(resp);
+      //@ts-ignore
+      form?.reset();
+    });
+  });
 </script>
 
 <div class="p-2 bg-yellow-400 flex flex-col justify-center items-center">
@@ -61,6 +76,7 @@
 
   <p class="font-bold">You can drop me message below</p>
   <form
+    id="mail"
     class="flex justify-start items-left flex-col border-black bg-orange-400 border-4 neo-brutal-shadow
   hover:neo-brutal-shadow-active font-bold"
   >
