@@ -1,15 +1,16 @@
 ---
-const { title, desp,defaultColor } = Astro.props;
+const { title, desp, defaultColor, flip = false } = Astro.props;
 ---
 
-<div
-  class={`m-5 p-5 w-64 border-4 border-black neo-brutal-shadow
-hover:neo-brutal-shadow-actives ${defaultColor}`}
->
-  <div class="border-b-4 border-black font-semibold">
-    <h4>{title}</h4>
-  </div>
-  <p>
-    {desp}
-  </p>
+<div class={` p-5 w-full flex ${flip? "flex-row":"flex-row-reverse"} justify-between items-center ${defaultColor}`}>
+
+      <>
+        <div class="p-5 font-semibold">
+          <h4 class="text-3xl">{title}</h4>
+          <p>{desp}</p>
+        </div>
+        <div class="border-b-4 h-32 w-64 border-black border-4 font-semibold" />
+      </>
+  
 </div>
+<hr class="border-black border-4 w-full h-1" ></hr>
