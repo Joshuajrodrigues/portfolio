@@ -1,6 +1,18 @@
 ---
+import { Image } from "astro:assets";
 import Tags from "./Tags.astro";
-const { title, desp, defaultColor, flip = false, tags = [],visit="",git="",readmore="" } = Astro.props;
+import text from "../images/konitive.svg";
+const {
+  title,
+  desp,
+  defaultColor,
+  flip = false,
+  tags = [],
+  visit = "",
+  git = "",
+  readmore = "",
+  image = "",
+} = Astro.props;
 ---
 
 <div class={` p-5 w-full  ${defaultColor}`}>
@@ -43,7 +55,9 @@ const { title, desp, defaultColor, flip = false, tags = [],visit="",git="",readm
             ></a
           >
         </div>
-        <a class="p-2 w-fit border border-black flex items-center text-black bg-white" href={readmore}
+        <a
+          class="p-2 w-fit border border-black flex items-center text-black bg-white"
+          href={readmore}
           >Read more<svg
             class="ml-1"
             xmlns="http://www.w3.org/2000/svg"
@@ -59,6 +73,7 @@ const { title, desp, defaultColor, flip = false, tags = [],visit="",git="",readm
       </section>
     </div>
     <div class="border-b-4 h-32 w-64 min border-black border-4 font-semibold">
+      {image && <Image src={image} alt={title} />}
     </div>
   </div>
   <div class="m-2 flex flex-wrap">
