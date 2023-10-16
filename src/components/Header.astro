@@ -1,6 +1,20 @@
 ---
 import Title from "./Title.astro";
 import Button from "./Button.astro"
+// Create a Date object for August 2021
+const aug2021 = new Date('2021-08-01');
+
+// Get the current date
+const currentDate = new Date();
+
+// Calculate the difference in milliseconds between the current date and August 2021
+const timeDiff = currentDate.getTime() - aug2021.getTime();
+
+// Convert the time difference to years
+const yearsPassed = timeDiff / (1000 * 60 * 60 * 24 * 365.25);
+
+// Round to the nearest half-year
+const roundedYears = Math.floor(yearsPassed);
 ---
 
 <header class=" flex flex-col items-center justify-center bg-yellow-400">
@@ -8,6 +22,19 @@ import Button from "./Button.astro"
   <div>
 	{<Button/>}
   </div>
- 
+  <div class={`p-5 w-full bg-yellow-400 font-bold text-xl`}>
+    <p>I have {roundedYears}+ years of experience in front-end development.</p>
+    <p>
+      My professional passion lies in crafting innovative, web-based solutions
+      to elegantly address the challenges of everyday life.
+    </p>
+    <p>
+      Technologies I commonly use :Tailwind, SCSS, Javascript (ES2020),
+      Nextjs,Reactjsx Nodejs, Supabase, Vite, Webpack.
+    </p>
+    <p>Currently working with the lovely people at Teknorix</p>
+  </div>
+
+  
 </header>
 
