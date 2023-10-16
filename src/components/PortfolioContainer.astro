@@ -3,6 +3,8 @@ import { colors } from "./AboutContainer.astro";
 import PortfolioCards from "./PortfolioCards.astro";
 import kuzina from '../images/kuzina.svg'
 import kognitive from '../images/konitive.svg'
+import eye from '../images/eye.svg'
+import manga from '../images/manga.svg'
 ---
 
 <div class="flex flex-col justify-center items-center">
@@ -36,6 +38,7 @@ import kognitive from '../images/konitive.svg'
     visit="https://glaucoma-detector.vercel.app/"
     git="https://github.com/Joshuajrodrigues/glaucoma-detector"
     readmore=""
+    image={eye}
   />
   <PortfolioCards
     defaultColor={colors[3]}
@@ -46,5 +49,6 @@ import kognitive from '../images/konitive.svg'
     visit="https://www.npmjs.com/package/manga2epub4kindle"
     git="https://github.com/Joshuajrodrigues/manga2epub4kindle"
     readmore=""
+    image={manga}
   />
 </div>
