@@ -1,16 +1,23 @@
 ---
-const { title, desp, defaultColor, flip = false } = Astro.props;
+import Tags from "./Tags.astro";
+const { title, desp, defaultColor, flip = false, tags = [] } = Astro.props;
 ---
 
-<div class={` p-5 w-full flex ${flip? "flex-row":"flex-row-reverse"} justify-between items-center ${defaultColor}`}>
-
-      <>
-        <div class="p-5 font-semibold">
-          <h4 class="text-3xl">{title}</h4>
-          <p>{desp}</p>
-        </div>
-        <div class="border-b-4 h-32 w-64 border-black border-4 font-semibold" />
-      </>
-  
+<div class={` p-5 w-full  ${defaultColor}`}>
+  <div
+    class=`flex justify-between items-center  ${
+    flip ? "flex-row" : "flex-row-reverse"
+  }`
+  >
+    <div class="p-5 font-semibold">
+      <h4 class="text-3xl">{title}</h4>
+      <p>{desp}</p>
+    </div>
+    <div class="border-b-4 h-32 w-64 border-black border-4 font-semibold"></div>
+  </div>
+  <div class="flex flex-wrap">
+    {tags.map((tag: string) => <Tags text={tag} />)}
+  </div>
 </div>
-<hr class="border-black border-4 w-full h-1" ></hr>
+
+<hr class="border-black border-4 w-full h-1" />
