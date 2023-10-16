@@ -1,6 +1,6 @@
 ---
 import Tags from "./Tags.astro";
-const { title, desp, defaultColor, flip = false, tags = [] } = Astro.props;
+const { title, desp, defaultColor, flip = false, tags = [],visit="",git="",readmore="" } = Astro.props;
 ---
 
 <div class={` p-5 w-full  ${defaultColor}`}>
@@ -16,7 +16,7 @@ const { title, desp, defaultColor, flip = false, tags = [] } = Astro.props;
         <div class="flex">
           <a
             class=`p-2 ${flip?'ml-1 my-1':'mr-1 my-1'} flex items-center text-white bg-black`
-            href=""
+            href={visit}
             >Vist <svg
               class="ml-1"
               xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +29,7 @@ const { title, desp, defaultColor, flip = false, tags = [] } = Astro.props;
               ></path></svg
             ></a
           >
-          <a class="p-2 m-1 flex items-center text-white bg-black" href=""
+          <a class="p-2 m-1 flex items-center text-white bg-black" href={git}
             >Github<svg
               class="ml-1"
               xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@ const { title, desp, defaultColor, flip = false, tags = [] } = Astro.props;
             ></a
           >
         </div>
-        <a class="p-2 w-fit border border-black flex items-center text-black bg-white" href=""
+        <a class="p-2 w-fit border border-black flex items-center text-black bg-white" href={readmore}
           >Read more<svg
             class="ml-1"
             xmlns="http://www.w3.org/2000/svg"
