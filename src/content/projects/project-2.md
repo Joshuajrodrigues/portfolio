@@ -1,26 +1,82 @@
 ---
 defaultColor: "bg-pink-400"
 title: "Kognitive"
-desp:  "Cbt journaling app with pre built forms."
-tags: [
-      "Reactjs",
-      "Typescript",
-      "Supabase",
-      "Zustand",
-      "TailwindCss",
-      "ChakraUi",
-    ]
+desp: "Cbt journaling app with pre built forms."
+tags:
+  ["Reactjs", "Typescript", "Supabase", "Zustand", "TailwindCss", "ChakraUi"]
 visit: "https://kognitive.netlify.app"
 git: "https://github.com/Joshuajrodrigues/cbtjournal"
 image: "/konitive.svg"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+# The Problem
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+2022 was a difficult year and while browsing online I found a lot of books and apps for Cognitive Behavioral Therapy.However these were very expansive and at times unavailable in my region, some of my friends were even paying outrageous amounts for the forms. Some of which would either get misplaced (Physical) or used for ad targeting (applications).
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+# The Solution
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+Kognitive is a CBT journaling app designed to make the process of practicing Cognitive Behavioral Therapy more manageable and structured. It provides users with a digital platform to journal their thoughts, feelings, and behaviors, making it easier to recognize patterns and apply CBT techniques for better mental health.
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+# Features
+
+Kognitive offers several key features:
+
+- **Daily checkin:** A general space for users to record their thoughts and emotions, organized by date and time.
+
+- **SMART goal builder:** Users can track their goals and get a clear picture of what they want and how they can archive it.
+
+- **Stress manager:** A feature for recording and analyzing stress, helping users understand how their actions relate to their thoughts and emotions.
+
+- **Worry challenge:** Kognitive offers a form to challenge worry thoughts, to jot them down and to make sense of them.
+
+- **Breakdown argument:** Ever had those arguments that ruin your entire day ? This is for you.
+
+- **History:** Kognitive offers a histroy table where you can view your past entries.
+
+# Challenges
+
+1. **User Engagement:** Usuaaly you see these apps use gamification tactics and rewards, they are flashy or too bubbly. I persoanlly find this to be a bad design for an app where the user comes in with varid mental states and stresses
+
+   - **Solution:** Kognitive employs clean and soft ui. It does not force your hand at anything, dont want to wite a step, thats ok. The app stays out of your way and neutral to make sure the user can focus on themselves
+
+2. **Data Privacy and Security:** Safeguarding sensitive user data and ensuring the privacy of their thoughts and emotions is crucial in a mental health app.
+
+   - **Solution:** Konitive is opensource, you can clone host this on your personal supabse db, there are no ads and its free.
+
+3. **Forms:** The forms provided in kognitive have a slightly complex state mangment system.
+
+   - **Solution:** It was made easier by using zustand over redux as it felt like the perfect balance for an app like this
+
+# Future Plans
+
+Kognitive aims to continue evolving to better serve its users:
+
+
+- **Enhanced Analytics:** Improving the app's data analysis capabilities to offer more insights into thought, emotion, and behavior patterns.
+
+- **Mood Prediction:** Implementing AI-driven mood prediction to help users anticipate and manage emotional states.
+
+- **Personalized CBT Plans:** Developing personalized CBT plans based on user data, allowing for tailored therapeutic experiences.
+
+
+
+<style>
+      h1 {
+        margin-top: 2rem;
+        font-weight: 800;
+        font-size:1.3rem;
+      }
+      h2{
+        font-weight: 500;
+        font-size:1rem;
+   
+        margin:0 1rem 
+      }
+  ul, ol, p {
+    list-style: revert;
+    margin:1rem
+  }
+  .astro-code{
+    margin:1rem
+  }
+</style>
