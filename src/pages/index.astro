@@ -7,17 +7,19 @@ import AboutContainer from '../components/AboutContainer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import ContactContainer from '../components/ContactContainer.astro';
 import PortfolioContainer from '../components/PortfolioContainer.astro'
+import { ViewTransitions } from 'astro:transitions';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<ViewTransitions />
 	</head>
 	<body>
 		<Header />
 
-		<main class="font-publicSans">
+		<main  class="font-publicSans">
 			<hr class="border-black border-4 w-full h-1" ></hr>
 			<SubHead title="Porfolio" extra/> 
 			<hr class="border-black border-4 w-full h-1" ></hr>
