@@ -10,7 +10,7 @@ image: "/eye.svg"
 
 # Preface
 
-In 2021, I was in my final year of college, working on a significant project that marked the beginning of my project journey. It was a collaborative effort, originally implemented in Python. Our project received first place among all engineering departments, which was a remarkable achievement.
+In 2021, I was in my final year of college, working on a college project that marked the beginning of my software development journey. It was a collaborative effort, originally implemented in Python. Our project received first place among all engineering departments, which was a remarkable achievement.
 
 [Original project source](https://github.com/Joshuajrodrigues/Glaucoma-detection-using-fuzzy-c-strange-point-algorithm)
 

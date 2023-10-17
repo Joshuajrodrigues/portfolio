@@ -1,20 +1,68 @@
 ---
 defaultColor: "bg-blue-400"
 title: "Manga2epub4kindle"
-desp:  "cbr/cbz manga to epub file convertor for kindle"
+desp: "cbr/cbz manga to epub file convertor for kindle"
 tags: ["Nodejs", "Sharp"]
 visit: "https://www.npmjs.com/package/manga2epub4kindle"
 git: "https://github.com/Joshuajrodrigues/manga2epub4kindle"
 image: "/manga.svg"
 ---
 
-# The problem
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+# The Problem
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+In 2023, I acquired a Kindle and had a substantial collection of manga (Japanese comic books) in the form of cbz/cbr formats. Unfortunately, Kindle does not support these formats, and I needed to convert them into epub files. I attempted various converters like KCC (Kindle Comic Converter), but they often resulted in file sizes exceeding 200MB, which Kindle does not allow for cloud storage. To overcome this limitation, I decided to develop my own solution.
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+# The Solution
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+Manga2epub4kindle, while a mouthful, is a practical terminal script that leverages the Sharp library to process images.
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+# Features
+
+- **Generates Compact EPUB Files:** The app consistently produces smaller EPUB files than the input files, ensuring Kindle compatibility.
+
+- **Saves/Loads Metadata:** The script stores all your metadata in a JSON file, making it convenient for batch or volume conversions.
+
+- **Adds Metadata:** It eliminates issues with undefined authors or titles, enhancing the organization of your manga on Kindle.
+
+- **Trims Borders:** White borders, which can distort images on smaller Kindles, are removed.
+
+# Challenges
+
+1. **File Systems:** Handling file systems asynchronously and synchronously presented a significant challenge.
+
+   - **Solution:** Extensive research, tutorials, and Stack Overflow queries were necessary to overcome these hurdles.
+
+2. **Kindle-Specific EPUB Format:** Kindle requires a specific EPUB format for comics, which added complexity to the conversion process.
+
+   - **Solution:** I delved into the source code of KCC to understand the necessary meta tags for Kindle compatibility.
+
+3. **Node.js EPUB Library Limitations:** The library available for creating EPUB files in Node.js was deprecated and did not support the required meta tags for Kindle.
+
+   - **Solution:** I forked the library, made the necessary modifications, and adapted it to meet the specific needs of Kindle compatibility.
+
+# Future Plans
+
+- **Enhancements and Improvements:** While the app is functional, there is room for quality-of-life features and improvements. Additionally, it currently operates on Node.js 16, so I aim to make it compatible with the latest Node.js versions.
+
+- **Bun.js Integration:** Exploring the integration of the Bun.js JavaScript runtime, known for its speed and promise, to potentially enhance the app's performance and capabilities.
+
+<style>
+      h1 {
+        margin-top: 2rem;
+        font-weight: 800;
+        font-size:1.3rem;
+      }
+      h2{
+        font-weight: 500;
+        font-size:1rem;
+   
+        margin:0 1rem 
+      }
+  ul, ol, p {
+    list-style: revert;
+    margin:1rem
+  }
+  .astro-code{
+    margin:1rem
+  }
+</style>
