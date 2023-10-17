@@ -3,7 +3,7 @@ defaultColor: "bg-pink-400"
 title: "Kognitive"
 desp: "Cbt journaling app with pre built forms."
 tags:
-  ["Reactjs", "Typescript", "Supabase", "Zustand", "TailwindCss", "ChakraUi"]
+  ["Reactjs", "Typescript","PWA", "Supabase", "Zustand", "TailwindCss", "ChakraUi"]
 visit: "https://kognitive.netlify.app"
 git: "https://github.com/Joshuajrodrigues/cbtjournal"
 image: "/konitive.svg"
@@ -20,6 +20,8 @@ Kognitive is a CBT journaling app designed to make the process of practicing Cog
 # Features
 
 Kognitive offers several key features:
+
+- **PWA:** It is a progressive web app, can be installed on your phone like a native app.
 
 - **Daily checkin:** A general space for users to record their thoughts and emotions, organized by date and time.
 
@@ -46,6 +48,7 @@ Kognitive offers several key features:
 3. **Forms:** The forms provided in kognitive have a slightly complex state mangment system.
 
    - **Solution:** It was made easier by using zustand over redux as it felt like the perfect balance for an app like this
+   
 
 # Future Plans
 
