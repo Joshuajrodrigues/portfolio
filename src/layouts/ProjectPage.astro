@@ -1,22 +1,32 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-type Props = CollectionEntry<'projects'>['data'];
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Backlink from "../components/Backlink.astro"
+type Props = CollectionEntry<"projects">["data"];
 
+const { title, tags, desp, defaultColor, visit, git, image } = Astro.props;
+console.log("image",image);
 
-const {title,tags,desp,defaultColor,visit,git,image} = Astro.props
 ---
 
 <html lang="en">
-<head>
+  <head>
     <BaseHead title={title} description={desp} />
-</head>
-<body>
+  </head>
+  <body>
     <Header hideIntroCards />
-    <h1>{title}</h1>
-    <slot />
+    <main class="mt-5">
+      <Backlink/>
+      <h1 class=" break-all text-center text-4xl font-extrabold" >{title}</h1>
+      <img width={1020} height={510} src={image} alt={title} />
+      <section class=" text-center text-2xl font-extrabold">
+        {desp}
+      </section>
+      <slot />
+      <Backlink/>
+    </main>
     <Footer />
-</body>
+  </body>
 </html>
