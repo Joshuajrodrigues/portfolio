@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 type Props = CollectionEntry<'projects'>['data'];
 
 
@@ -16,5 +17,6 @@ const {title,tags,desp,defaultColor,visit,git,image} = Astro.props
     <Header hideIntroCards />
     <h1>{title}</h1>
     <slot />
+    <Footer />
 </body>
 </html>
