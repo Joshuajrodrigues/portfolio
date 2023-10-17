@@ -1,19 +1,70 @@
 ---
 defaultColor: "bg-orange-400"
 title: "Glaucoma detector"
-desp:  "Find eye cup to disk ratio using fuzzy clustering algorithms."
+desp: "Find eye cup to disk ratio using fuzzy clustering algorithms."
 tags: ["React", "Typescript", "Zustand", "TailwindCss"]
 visit: "https://glaucoma-detector.vercel.app/"
 git: "https://github.com/Joshuajrodrigues/glaucoma-detector"
 image: "/eye.svg"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+# Preface
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+In 2021, I was in my final year of college, working on a significant project that marked the beginning of my project journey. It was a collaborative effort, originally implemented in Python. Our project received first place among all engineering departments, which was a remarkable achievement.
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+[Original project source](https://github.com/Joshuajrodrigues/Glaucoma-detection-using-fuzzy-c-strange-point-algorithm)
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+Despite our success, I was determined to make it even better because I wasn't entirely satisfied with the initial outcome. I decided to rebuild it using Next.js and the HTML Canvas API, which resulted in a more satisfying version.
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+# The Problem
+
+In the world of clustering algorithms, numerous options like the well-known K-means exist. The initial problem statement in college was to compare various clustering algorithms with the Fuzzy C Strange Point Algorithm, which our professor had introduced. The goal was to use these algorithms for glaucoma detection.
+
+However, my personal problem statement was to create a user-friendly and accessible application for segmenting the cup and disk of the eye using the given algorithm.
+
+# The Solution
+
+The Glaucoma detector presents a straightforward user interface for quickly calculating the cup and disk using the Canvas API, a task that was challenging to accomplish with Python alone.
+
+# Challenges
+
+1. **Area Calculation:** After separating the image, determining the area of the disk and cup proved to be challenging.
+
+   - **Solution:** I provided two sets of handles that users can manually adjust to obtain more accurate area measurements.
+
+2. **Eye Fundus Images:** Issues arose with the quality of eye fundus images, particularly when images were too blurry or unclear, which disrupted the image separation process.
+
+   - **Solution:** I implemented pre-processing techniques to enhance image contrast before the separation process. Additionally, I included a function to rerun the clustering algorithm to eliminate excess noise.
+
+# Future Plans
+
+- **WebAssembly (Wasm):** While JavaScript is fast, it's not optimized for tasks like this. I plan to explore the use of WebAssembly with languages like Rust or Lua to improve performance.
+
+- **Accuracy:** The current system has limitations in accuracy, mainly relying on the performance of the underlying algorithm. Although the Fuzzy C Strange Point Algorithm outperforms K-means and Fuzzy C-means in terms of performance and slightly in quality, all three algorithms struggle with low-quality images that doctors can diagnose without issue. Therefore, I aim to integrate a different algorithm in the future to enhance accuracy.
+
+ 
+
+
+<style>
+      h1 {
+        margin-top: 2rem;
+        font-weight: 800;
+        font-size:1.3rem;
+      }
+      h2{
+        font-weight: 500;
+        font-size:1rem;
+   
+        margin:0 1rem 
+      }
+  ul, ol, p {
+    list-style: revert;
+    margin:1rem
+  }
+  .astro-code{
+    margin:1rem
+  }
+  a{
+    text-decoration-line:underline;
+  }
+</style>

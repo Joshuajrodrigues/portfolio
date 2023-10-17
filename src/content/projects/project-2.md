@@ -35,7 +35,7 @@ Kognitive offers several key features:
 
 # Challenges
 
-1. **User Engagement:** Usuaaly you see these apps use gamification tactics and rewards, they are flashy or too bubbly. I persoanlly find this to be a bad design for an app where the user comes in with varid mental states and stresses
+1. **User Engagement:** Usually you see these apps use gamification tactics and rewards, they are flashy or too bubbly. I persoanlly find this to be a bad design for an app where the user comes in with varid mental states and stresses
 
    - **Solution:** Kognitive employs clean and soft ui. It does not force your hand at anything, dont want to wite a step, thats ok. The app stays out of your way and neutral to make sure the user can focus on themselves
 
