@@ -1,26 +1,87 @@
 ---
 defaultColor: "test"
 title: "Kuzina"
-desp:  "Kitchen management system for the family."
-tags: [
-      "Nextjs",
-      "Reactjs",
-      "Supabase",
-      "Typescript",
-      "TailwindCss",
-      "Shadcn/ui",
-    ]
+desp: "Kitchen management system for the family."
+tags:
+  ["Nextjs", "Reactjs", "Supabase", "Typescript", "TailwindCss", "Shadcn/ui"]
 visit: "https://kuzina.vercel.app/"
 git: "https://github.com/Joshuajrodrigues/kuzina"
-image: "../../src/images/kuzina.svg"
+image: "/kuzina.svg"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+# The problem
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+Often times I find myself too busy to check whats left in the firdge, somedays I plan a recipe but
+I forget the steps or where I had found it and when I do have a recipe I find out im out of a partiular ingridient.Sometimes I forget to buy stuff and somedays I find
+that its already bought and I bought it again.
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+# The solution
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+Kuzina is a kitchen manahement app, its designed to be quick and effortless for data entry and view.
+The app comes with collaboration feature so that you can be in sync with your family memebers,
+what needs to be purchanced what has been purchaced already and so on.
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+# Features
+
+It provides 3 main features Pantry Recipes and Wish list
+Pantry is where all your inventory goes, salt, sugar, pepper, milk
+Recipes is where all youre recipes go
+Wishlist is the stuff that you are out of and can refer to when you go shoping.
+
+# Challenges
+
+1. For pantry (later for recipes and wishlist), I wanted the listing to be mobile first
+   as mobile is what my mom and I use when we go shopping. A table would be a bad idea
+   as often it shows too much data or too little.
+
+## Solution
+
+What I finaly came up with was a collapsible card stack that "opens" up to reveal more content. This looked cool and was also very challenging to build.
+
+___
+
+2. Auth was and is very challenging in this app, mostly as I never dealt with complex authentication in backend. Not only does kuzina have a generic user login, it also has a request system where other users can
+   request the kitchen creator to join their kitchen. As a frontend dev I had to ask help from my work collegues on how to actually get this done.
+
+## Solution
+
+I finally cracked it by using row based security from the databse side (Supabase). For the kitchen read write access.
+
+___
+
+3. Entering data for recipes was tedious. Specially if you are like me who just copies recipies from
+   youtube or websites, to manually add it would be boring.
+
+## Solution
+
+This was my favourite. The add/edit recipe drawer gives you a button called fast fill. This opens up a text area, where you paste in your content, and choose how you want the data to be broken up.
+So lets say the data is
+
+```
+1) milk
+2) bananas
+3) sugar
+```
+
+all you have to do is select "Break on new line" and the app fills out the form for you.
+___
+<style>
+      h1 {
+        margin-top: 2rem;
+        font-weight: 800;
+        font-size:1.3rem;
+      }
+      h2{
+        font-weight: 500;
+        font-size:1rem;
+   
+        margin:0 1rem 
+      }
+  ul, ol, p {
+    list-style: revert;
+    margin:1rem
+  }
+  .astro-code{
+    margin:1rem
+  }
+</style>

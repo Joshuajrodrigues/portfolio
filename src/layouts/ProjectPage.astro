@@ -3,12 +3,11 @@ import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Backlink from "../components/Backlink.astro"
+import Backlink from "../components/Backlink.astro";
 type Props = CollectionEntry<"projects">["data"];
 
 const { title, tags, desp, defaultColor, visit, git, image } = Astro.props;
-console.log("image",image);
-
+console.log("image", image);
 ---
 
 <html lang="en">
@@ -17,15 +16,18 @@ console.log("image",image);
   </head>
   <body>
     <Header hideIntroCards />
+ 
     <main class="mt-5">
-      <Backlink/>
-      <h1 class=" break-all text-center text-4xl font-extrabold" >{title}</h1>
+      <Backlink />
+      <h1 class="break-all text-center text-4xl font-extrabold">{title}</h1>
       <img width={1020} height={510} src={image} alt={title} />
-      <section class=" text-center text-2xl font-extrabold">
+      <section class="text-center text-2xl font-extrabold">
         {desp}
       </section>
-      <slot />
-      <Backlink/>
+      <div class="m-2 p-2">
+        <slot />
+      </div>
+      <Backlink />
     </main>
     <Footer />
   </body>
