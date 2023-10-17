@@ -1,6 +1,8 @@
 ---
 import Title from "./Title.astro";
 import Button from "./Button.astro";
+
+const {hideIntroCards=false} = Astro.props
 // Create a Date object for August 2021
 const aug2021 = new Date("2021-08-01");
 
@@ -22,46 +24,49 @@ const roundedYears = Math.floor(yearsPassed);
   <div>
     {(<Button />)}
   </div>
-  <div class={`p-5 w-full bg-yellow-400  font-bold text-xl`}>
-    <p
-      class="p-2 m-3 bg-teal-400 rotate-2 border-black border-2 neo-brutal-shadow
-    hover:neo-brutal-shadow-active transition duration-500 ease-in-out"
-      id="exp"
-    >
-      I have {roundedYears}+ years of experience in front-end development.
-    </p>
-    <p
-      class="p-2 m-3 bg-pink-400 -rotate-2 border-black border-2 neo-brutal-shadow
-    hover:neo-brutal-shadow-active transition duration-500 ease-in-out"
-    >
-      My professional passion lies in crafting innovative, web-based solutions
-      to elegantly address the challenges of everyday life.
-    </p>
-    <p
-      class="p-2 m-3 bg-orange-400 rotate-2 border-black border-2 neo-brutal-shadow
-    hover:neo-brutal-shadow-active transition duration-500 ease-in-out"
-    >
-      Technologies I commonly use: <br /> Tailwind CSS, SCSS/LESS, Javascript,
-      Typescript, Nextjs, Reactjs, Redux, Zustand, Nodejs, Ant Design, Webpack, Vite.
-    </p>
-    <p
-      class="p-2 m-3 bg-blue-400 -rotate-2 border-black border-2 neo-brutal-shadow
-    hover:neo-brutal-shadow-active transition duration-500 ease-in-out"
-    >
-      Currently working with the lovely people at <a
-        href="https://www.teknorix.com/"
-        >Teknorix
-      </a><svg
-        class="mb-1 inline"
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
-        fill="#000000"
-        viewBox="0 0 256 256"
-        ><path
-          d="M224,104a8,8,0,0,1-16,0V59.32l-66.33,66.34a8,8,0,0,1-11.32-11.32L196.68,48H152a8,8,0,0,1,0-16h64a8,8,0,0,1,8,8Zm-40,24a8,8,0,0,0-8,8v72H48V80h72a8,8,0,0,0,0-16H48A16,16,0,0,0,32,80V208a16,16,0,0,0,16,16H176a16,16,0,0,0,16-16V136A8,8,0,0,0,184,128Z"
-        ></path></svg
+  {
+    !hideIntroCards &&
+    <div class={`p-5 w-full bg-yellow-400  font-bold text-xl`}>
+      <p
+        class="p-2 m-3 bg-teal-400 rotate-2 border-black border-2 neo-brutal-shadow
+      hover:neo-brutal-shadow-active transition duration-500 ease-in-out"
+        id="exp"
       >
-    </p>
-  </div>
+        I have {roundedYears}+ years of experience in front-end development.
+      </p>
+      <p
+        class="p-2 m-3 bg-pink-400 -rotate-2 border-black border-2 neo-brutal-shadow
+      hover:neo-brutal-shadow-active transition duration-500 ease-in-out"
+      >
+        My professional passion lies in crafting innovative, web-based solutions
+        to elegantly address the challenges of everyday life.
+      </p>
+      <p
+        class="p-2 m-3 bg-orange-400 rotate-2 border-black border-2 neo-brutal-shadow
+      hover:neo-brutal-shadow-active transition duration-500 ease-in-out"
+      >
+        Technologies I commonly use: <br /> Tailwind CSS, SCSS/LESS, Javascript,
+        Typescript, Nextjs, Reactjs, Redux, Zustand, Nodejs, Ant Design, Webpack, Vite.
+      </p>
+      <p
+        class="p-2 m-3 bg-blue-400 -rotate-2 border-black border-2 neo-brutal-shadow
+      hover:neo-brutal-shadow-active transition duration-500 ease-in-out"
+      >
+        Currently working with the lovely people at <a
+          href="https://www.teknorix.com/"
+          >Teknorix
+        </a><svg
+          class="mb-1 inline"
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="#000000"
+          viewBox="0 0 256 256"
+          ><path
+            d="M224,104a8,8,0,0,1-16,0V59.32l-66.33,66.34a8,8,0,0,1-11.32-11.32L196.68,48H152a8,8,0,0,1,0-16h64a8,8,0,0,1,8,8Zm-40,24a8,8,0,0,0-8,8v72H48V80h72a8,8,0,0,0,0-16H48A16,16,0,0,0,32,80V208a16,16,0,0,0,16,16H176a16,16,0,0,0,16-16V136A8,8,0,0,0,184,128Z"
+          ></path></svg
+        >
+      </p>
+    </div>
+  }
 </header>
