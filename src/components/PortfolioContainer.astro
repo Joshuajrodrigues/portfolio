@@ -16,7 +16,7 @@ let images = [kuzina,kognitive,eye,manga]
   {
     projects?.map((project,index)=>(
       <PortfolioCards
-        defaultColor={colors[index]}
+        defaultColor={project.data.defaultColor}
         title={project.data.title}
         desp={project.data.desp}
         tags={project.data.tags}

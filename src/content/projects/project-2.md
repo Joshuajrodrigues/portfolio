@@ -1,5 +1,5 @@
 ---
-defaultColor: ""
+defaultColor: "bg-pink-400"
 title: "Kognitive"
 desp:  "Cbt journaling app with pre built forms."
 tags: [

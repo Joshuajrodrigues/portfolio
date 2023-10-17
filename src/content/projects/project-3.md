@@ -1,5 +1,5 @@
 ---
-defaultColor: ""
+defaultColor: "bg-orange-400"
 title: "Glaucoma detector"
 desp:  "Find eye cup to disk ratio using fuzzy clustering algorithms."
 tags: ["React", "Typescript", "Zustand", "TailwindCss"]
