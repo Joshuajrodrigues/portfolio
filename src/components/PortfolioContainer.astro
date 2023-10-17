@@ -5,65 +5,27 @@ import kuzina from "../images/kuzina.svg";
 import kognitive from "../images/konitive.svg";
 import eye from "../images/eye.svg";
 import manga from "../images/manga.svg";
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection("projects"));
+let images = [kuzina,kognitive,eye,manga]
+
 ---
 
 <div class="flex flex-col justify-center items-center">
-
-  <PortfolioCards
-    defaultColor={colors[1]}
-    title="Kuzina"
-    desp="Kitchen management system for the family."
-    tags={[
-      "Nextjs",
-      "Reactjs",
-      "Supabase",
-      "Typescript",
-      "TailwindCss",
-      "Shadcn/ui",
-    ]}
-    visit="https://kuzina.vercel.app/"
-    git="https://github.com/Joshuajrodrigues/kuzina"
-    readmore=""
-    image={kuzina}
-  />
-
-  <PortfolioCards
-    defaultColor={colors[0]}
-    title="Kognitive"
-    desp="Cbt journaling app with pre built forms."
-    flip
-    tags={[
-      "Reactjs",
-      "Typescript",
-      "Supabase",
-      "Zustand",
-      "TailwindCss",
-      "ChakraUi",
-    ]}
-    visit="https://kognitive.netlify.app"
-    git="https://github.com/Joshuajrodrigues/cbtjournal"
-    readmore=""
-    image={kognitive}
-  />
-  <PortfolioCards
-    defaultColor={colors[4]}
-    title="Glaucoma detector"
-    desp="Find eye cup to disk ratio using clustering algorithms."
-    tags={["React", "Typescript", "Zustand", "TailwindCss"]}
-    visit="https://glaucoma-detector.vercel.app/"
-    git="https://github.com/Joshuajrodrigues/glaucoma-detector"
-    readmore=""
-    image={eye}
-  />
-  <PortfolioCards
-    defaultColor={colors[3]}
-    title="Manga2epub4kindle"
-    flip
-    desp="cbr/cbz manga to epub convertor for kindle"
-    tags={["Nodejs", "Sharp"]}
-    visit="https://www.npmjs.com/package/manga2epub4kindle"
-    git="https://github.com/Joshuajrodrigues/manga2epub4kindle"
-    readmore=""
-    image={manga}
-  />
+  {
+    projects?.map((project,index)=>(
+      <PortfolioCards
+        defaultColor={colors[index]}
+        title={project.data.title}
+        desp={project.data.desp}
+        tags={project.data.tags}
+        visit={project.data.visit}
+        flip={index%2!==0}
+        git={project.data.git}
+        readmore=""
+        image={images[index]}
+      />
+    ))
+  }
 </div>
