@@ -4,7 +4,7 @@ title: "Kognitive"
 desp: "Cbt journaling app with pre built forms."
 tags:
   ["Reactjs", "Typescript","PWA", "Supabase", "Zustand", "TailwindCss", "ChakraUi"]
-visit: "https://kognitive.netlify.app"
+visit: "https://kognitive.vercel.app"
 git: "https://github.com/Joshuajrodrigues/cbtjournal"
 image: "/konitive.svg"
 ---
