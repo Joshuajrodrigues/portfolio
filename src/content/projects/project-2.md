@@ -17,6 +17,7 @@ image: "/konitive.svg"
 
 Kognitive is a CBT journaling app designed to make the process of practicing Cognitive Behavioral Therapy more manageable and structured. It provides users with a digital platform to journal their thoughts, feelings, and behaviors, making it easier to recognize patterns and apply CBT techniques for better mental health.
 
+![dashboard](/kognitive/dash.png)
 # Features
 
 Kognitive offers several key features:
@@ -34,13 +35,13 @@ Kognitive offers several key features:
 - **Breakdown argument:** Ever had those arguments that ruin your entire day ? This is for you.
 
 - **History:** Kognitive offers a histroy table where you can view your past entries.
-
+![history](/kognitive/history.png)
 # Challenges
 
 1. **User Engagement:** Usually you see these apps use gamification tactics and rewards, they are flashy or too bubbly. I persoanlly find this to be a bad design for an app where the user comes in with varid mental states and stresses
 
    - **Solution:** Kognitive employs clean and soft ui. It does not force your hand at anything, dont want to wite a step, thats ok. The app stays out of your way and neutral to make sure the user can focus on themselves
-
+![example](/kognitive/example.png)
 2. **Data Privacy and Security:** Safeguarding sensitive user data and ensuring the privacy of their thoughts and emotions is crucial in a mental health app.
 
    - **Solution:** Konitive is opensource, you can clone host this on your personal supabse db, there are no ads and its free.
@@ -81,5 +82,10 @@ Kognitive aims to continue evolving to better serve its users:
   }
   .astro-code{
     margin:1rem
+  }
+    img{
+   
+    border: black 4px solid ;
+    margin:5px;
   }
 </style>
