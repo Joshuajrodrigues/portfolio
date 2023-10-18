@@ -25,12 +25,16 @@ However, my personal problem statement was to create a user-friendly and accessi
 # The Solution
 
 The Glaucoma detector presents a straightforward user interface for quickly calculating the cup and disk using the Canvas API, a task that was challenging to accomplish with Python alone.
+![dashboard](/gd/dash.png)
+**Not for medical use**
 
 # Challenges
 
 1. **Area Calculation:** After separating the image, determining the area of the disk and cup proved to be challenging.
 
    - **Solution:** I provided two sets of handles that users can manually adjust to obtain more accurate area measurements.
+  ![cup](/gd/cup.png)
+  ![disk](/gd/disk.png)
 
 2. **Eye Fundus Images:** Issues arose with the quality of eye fundus images, particularly when images were too blurry or unclear, which disrupted the image separation process.
 
@@ -66,5 +70,10 @@ The Glaucoma detector presents a straightforward user interface for quickly calc
   }
   a{
     text-decoration-line:underline;
+  }
+    img{
+   
+    border: black 4px solid ;
+    margin:5px;
   }
 </style>
