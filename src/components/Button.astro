@@ -1,8 +1,17 @@
----
+<script>
+  // Import npm modules.
+  //@ts-ignore
+  import confetti from 'canvas-confetti';
 
----
+  // Find our component DOM on the page.
+  const button = document.getElementById("resume-download");
 
+  // Add event listeners to fire confetti when a button is clicked.
+  button!.addEventListener('click', () => confetti());
+
+</script>
 <button
+  id="resume-download"
   class={`font-bold 
         p-2 m-2 flex items-center justify-center
         bg-green-400 

@@ -9,7 +9,9 @@ specifiers:
   '@fontsource-variable/public-sans': ^5.0.14
   '@fontsource/rammetto-one': ^5.0.15
   '@fontsource/sigmar-one': ^5.0.15
+  '@types/canvas-confetti': ^1.6.2
   astro: ^3.2.4
+  canvas-confetti: ^1.9.0
   nodemailer: ^6.9.6
   sharp: ^0.32.6
   tailwindcss: ^3.0.24
@@ -23,7 +25,9 @@ dependencies:
   '@fontsource-variable/public-sans': 5.0.14
   '@fontsource/rammetto-one': 5.0.15
   '@fontsource/sigmar-one': 5.0.15
+  '@types/canvas-confetti': 1.6.2
   astro: 3.2.4
+  canvas-confetti: 1.9.0
   nodemailer: 6.9.6
   sharp: 0.32.6
   tailwindcss: 3.3.3
@@ -941,6 +945,10 @@ packages:
       '@babel/types': 7.23.0
     dev: false
 
+  /@types/canvas-confetti/1.6.2:
+    resolution: {integrity: sha512-ozy7d+7AmYnPEgzdGwwAIA0/yLHnT9YBUQAOm5Ucu+P2ptxq2P464SZDVzYp71wD10ZPYckyeC665bPxQM78kw==}
+    dev: false
+
   /@types/debug/4.1.9:
     resolution: {integrity: sha512-8Hz50m2eoS56ldRlepxSBa6PWEVCtzUo/92HgLc2qTMnotJNIm7xP+UZhyWoYsyOdd5dxZ+NZLb24rsKyFs2ow==}
     dependencies:
@@ -1353,6 +1361,10 @@ packages:
 
   /caniuse-lite/1.0.30001547:
     resolution: {integrity: sha512-W7CrtIModMAxobGhz8iXmDfuJiiKg1WADMO/9x7/CLNin5cpSbuBjooyoIUVB5eyCc36QuTVlkVa1iB2S5+/eA==}
+    dev: false
+
+  /canvas-confetti/1.9.0:
+    resolution: {integrity: sha512-0UGU/T5Un/Cd4Aj4fu/p/oVQm8Il+brK5xcmY+y77u7PXuyNJD4ODUWe01A5o3GUI9Bb8lOBlQ10VdaDsY1FBA==}
     dev: false
 
   /ccount/2.0.1:
