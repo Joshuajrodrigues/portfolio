@@ -16,6 +16,7 @@ In 2023, I acquired a Kindle and had a substantial collection of manga (Japanese
 
 Manga2epub4kindle, while a mouthful, is a practical terminal script that leverages the Sharp library to process images.
 
+![terminal ui](/manga/tui.png)
 # Features
 
 - **Generates Compact EPUB Files:** The app consistently produces smaller EPUB files than the input files, ensuring Kindle compatibility.
@@ -64,5 +65,10 @@ Manga2epub4kindle, while a mouthful, is a practical terminal script that leverag
   }
   .astro-code{
     margin:1rem
+  }
+      img{
+   
+    border: black 4px solid ;
+    margin:5px;
   }
 </style>
