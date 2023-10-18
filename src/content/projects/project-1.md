@@ -81,7 +81,7 @@ You also have break on comma and numbers as shown above.
   }
   img{
    
-
+    border: black 4px solid ;
     margin:5px;
   }
 </style>
