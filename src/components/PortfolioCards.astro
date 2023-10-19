@@ -22,9 +22,9 @@ const {
   }`
   >
     <div class=`${flip ? 'pr-3':'pl-3'} font-semibold`>
-      <h4 class="text-base sm:text-lg md:text-xl font-extrabold">{title}</h4>
-      <p>{desp}</p>
-      <section>
+      <h4 class="text-base sm:text-lg md:text-4xl font-extrabold">{title}</h4>
+      <p class="md:text-2xl md:my-2">{desp}</p>
+      <section class="md:text-xl">
         <div class="flex">
           <a
             target="_blank"
@@ -42,7 +42,10 @@ const {
               ></path></svg
             ></a
           >
-          <a target="_blank" class="p-2 m-1 flex items-center text-white bg-black" href={git}
+          <a
+            target="_blank"
+            class="p-2 m-1 md:mx-3 flex items-center text-white bg-black"
+            href={git}
             >Github<svg
               class="ml-1"
               xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +60,7 @@ const {
           >
         </div>
         <a
-          class="p-2 w-fit border border-black flex items-center text-black bg-white"
+          class="p-2 w-fit md:my-3 border border-black flex items-center text-black bg-white"
           href={readmore}
           >Read more<svg
             class="ml-1"
@@ -72,14 +75,15 @@ const {
           ></a
         >
       </section>
+      <div class="my-2 flex flex-wrap ">
+        {tags.map((tag: string) => <Tags text={tag} />)}
+      </div>
     </div>
-    <div class="border-b-4 h-32 w-64 min border-black border-4 font-semibold">
+    <div class="border-b-4  border-black border-4 font-semibold">
       {image && <Image src={image} alt={title} />}
     </div>
   </div>
-  <div class="m-2 flex flex-wrap">
-    {tags.map((tag: string) => <Tags text={tag} />)}
-  </div>
+ 
 </div>
 
 <hr class="border-black border-4 w-full h-1" />
