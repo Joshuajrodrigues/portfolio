@@ -15,7 +15,7 @@ const {
 } = Astro.props;
 ---
 
-<div class={` p-5 w-full  ${defaultColor}`}>
+<div class={` p-5 lg:p-0 w-full lg:w-1/2   ${defaultColor}`}>
   <div
     class=`m-2 flex justify-between items-center  ${
     flip ? "flex-row" : "flex-row-reverse"
@@ -84,6 +84,6 @@ const {
     </div>
   </div>
  
+  <hr class="border-black border-4 w-full h-1" />
 </div>
 
-<hr class="border-black border-4 w-full h-1" />

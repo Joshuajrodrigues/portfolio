@@ -8,6 +8,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import ContactContainer from '../components/ContactContainer.astro';
 import PortfolioContainer from '../components/PortfolioContainer.astro'
 import { ViewTransitions } from 'astro:transitions';
+import Showmore from '../components/Showmore.astro';
 ---
 
 <!doctype html>
@@ -24,7 +25,7 @@ import { ViewTransitions } from 'astro:transitions';
 			<SubHead title="Porfolio" extra/> 
 			<hr class="border-black border-4 w-full h-1" ></hr>
 			<PortfolioContainer/>
-			
+			<Showmore/>
 			<SubHead title="Contact" />
 			
 			<ContactContainer/>
