@@ -2,7 +2,7 @@
 defaultColor: "bg-orange-400"
 title: "Glaucoma detector"
 desp: "Find eye cup to disk ratio using fuzzy clustering algorithms."
-tags: ["React", "Typescript", "Zustand", "TailwindCss"]
+tags: ["ReactJs", "Typescript", "Zustand", "TailwindCss"]
 visit: "https://glaucoma-detector.vercel.app/"
 git: "https://github.com/Joshuajrodrigues/glaucoma-detector"
 image: "/eye.svg"
