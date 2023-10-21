@@ -11,6 +11,7 @@ import { ViewTransitions } from 'astro:transitions';
 import Showmore from '../components/Showmore.astro';
 ---
 <script>
+	console.log("loaded");
 	const colors = [
 	  "bg-pink-400",
 	  "bg-teal-400",
@@ -25,6 +26,7 @@ import Showmore from '../components/Showmore.astro';
 	  cards.forEach((card) => {
 	
 		card.addEventListener("click", () => {
+			
 		  changeColors(card)
 		});
 		// card.addEventListener("touchstart", () => {
@@ -50,7 +52,6 @@ import Showmore from '../components/Showmore.astro';
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<ViewTransitions />
 	</head>
 	<body>
 		<Header />
