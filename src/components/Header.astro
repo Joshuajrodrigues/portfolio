@@ -1,6 +1,8 @@
 ---
 import Title from "./Title.astro";
 import Button from "./Button.astro";
+import Card from "./Card.astro";
+import { colors } from "./AboutContainer.astro";
 
 const { hideIntroCards = false, extraColor = "" } = Astro.props;
 // Create a Date object for August 2021
@@ -17,8 +19,6 @@ const yearsPassed = timeDiff / (1000 * 60 * 60 * 24 * 365.25);
 
 // Round to the nearest half-year
 const roundedYears = Math.floor(yearsPassed);
-
-
 ---
 
 <header class="flex flex-col items-center justify-center bg-yellow-400">
@@ -28,43 +28,35 @@ const roundedYears = Math.floor(yearsPassed);
   </div>
   {
     !hideIntroCards ? (
-      <div class={`p-5 md:p-7 lg:p-12 w-full md:w-9/12 lg:w-8/12 bg-yellow-400  font-bold text-xl md:text-3xl `}>
-        <p
-          class="p-2 m-3 chamaleon rotate-2 border-black border-2 neo-brutal-shadow lg:my-8
-      hover:neo-brutal-shadow-active transition duration-500 ease-in-out bg-teal-400"
-          id="exp"
-        >
-          I have {roundedYears}+ years of experience in web development.
-        </p>
-        <p
-          class="p-2 m-3 chamaleon -rotate-2 border-black border-2 neo-brutal-shadow lg:my-8
-      hover:neo-brutal-shadow-active transition duration-500 ease-in-out bg-pink-400"
-        >
-          My professional passion lies in crafting innovative, web-based
-          solutions to elegantly address the challenges of everyday life.
-        </p>
-        <p
-          class="p-2 m-3 chamaleon rotate-2 border-black border-2 neo-brutal-shadow lg:my-8
-      hover:neo-brutal-shadow-active transition duration-500 ease-in-out bg-orange-400"
-        >
+      <div
+        class={`p-5 md:p-7 w-full flex flex-col items-center justify-center  bg-yellow-400  font-bold text-xl md:text-3xl `}
+      >
+        <Card defaultColor={colors[1]}>
+          I have {roundedYears}+ years of experience with fontend engineering and web development technologies.
+        </Card>
+        <Card
+          defaultColor={colors[2]}
+          flip
+          text={`My professional passion lies in crafting innovative, web-based
+          solutions to elegantly address the challenges of everyday life.`}
+        />
+        <Card defaultColor={colors[3]}>
           Technologies I commonly use: <br /> Tailwind CSS, SCSS/LESS,
           Javascript, Typescript, Nextjs, Reactjs, Redux, Zustand, Nodejs, Ant
           Design, Webpack, Vite.
-        </p>
-        <p
-          class="p-2 m-3 chamaleon -rotate-2 border-black border-2 neo-brutal-shadow lg:my-8
-      hover:neo-brutal-shadow-active transition duration-500 ease-in-out bg-blue-400"
-        >
-         <span>Currently working with the lovely people at</span> 
+        </Card>
+
+        <Card defaultColor={colors[4]} flip>
+          <span>I'm currently working with the lovely people at</span>
           <a class="" href="https://www.teknorix.com/">
+            Teknorix{" "}
             <img
-              class="ml-2 inline"
+              class="inline"
               src="https://www.teknorix.com/wp-content/uploads/2019/01/teknorix-logomark.svg"
               alt="logo"
-              width="16"
-              height="16"
+              width="24"
+              height="24"
             />
-            Teknorix{" "}
             <svg
               class="mb-1 inline"
               xmlns="http://www.w3.org/2000/svg"
@@ -76,10 +68,12 @@ const roundedYears = Math.floor(yearsPassed);
               <path d="M224,104a8,8,0,0,1-16,0V59.32l-66.33,66.34a8,8,0,0,1-11.32-11.32L196.68,48H152a8,8,0,0,1,0-16h64a8,8,0,0,1,8,8Zm-40,24a8,8,0,0,0-8,8v72H48V80h72a8,8,0,0,0,0-16H48A16,16,0,0,0,32,80V208a16,16,0,0,0,16,16H176a16,16,0,0,0,16-16V136A8,8,0,0,0,184,128Z" />
             </svg>
           </a>
-        </p>
+        </Card>
       </div>
     ) : (
-      <div class={`p-5 lg:p-12 w-full md:w-9/12 lg:w-1/2 bg-yellow-400  font-bold text-xl md:text-3xl`}>
+      <div
+        class={`p-5 lg:p-12 w-full md:w-9/12 lg:w-1/2 bg-yellow-400  font-bold text-xl md:text-3xl`}
+      >
         <p
           class={`p-2 m-3 chamaleon -rotate-2 border-black border-2 neo-brutal-shadow
       hover:neo-brutal-shadow-active transition duration-500 ease-in-out ${extraColor}`}

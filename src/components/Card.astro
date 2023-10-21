@@ -5,12 +5,13 @@ let { text, defaultColor, flip = false } = Astro.props;
 
 <p
   id="about-card"
-  class={`m-5 chamaleon p-5 cursor-pointer lg:w-1/2 font-semibold font-publicSans border-black border-2 neo-brutal-shadow
+  class={`m-5 w-full chamaleon p-5 cursor-pointer lg:w-1/2 font-semibold font-publicSans border-black border-2 neo-brutal-shadow
   transform -translate-x-1/2 -translate-y-1/2 ${
     flip ? "transform-growth-minus" : "transform-growth-plus"
   }  ${defaultColor}`}
 >
   {text}
+  <slot/>
 </p>
 <style>
   .transform-growth-plus {
@@ -25,7 +26,7 @@ transform: scale(1.1) rotate(0);
 
 /* Apply the click effect */
 .transform-growth-plus:active {
-transform: scale(1.1) rotate(3deg);
+transform: scale(1.1) rotate(-3deg);
 }
 
 .transform-growth-minus {
@@ -40,6 +41,6 @@ transform: scale(1.1) rotate(0);
 
 /* Apply the click effect */
 .transform-growth-minus:active {
-transform: scale(1.1) rotate(-3deg);
+transform: scale(1.1) rotate(3deg);
 }
 </style>
