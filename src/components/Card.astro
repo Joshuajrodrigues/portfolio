@@ -19,7 +19,7 @@ const colors = [
     card.addEventListener("click", () => {
       changeColors(card)
     });
-    card.addEventListener("touchend", () => {
+    card.addEventListener("touchstart", () => {
       changeColors(card)
     });
   });
@@ -40,7 +40,7 @@ const colors = [
 </script>
 <p
   id="about-card"
-  class={`m-5 p-5 select-none cursor-pointer lg:w-1/2 font-semibold font-publicSans border-black border-2 neo-brutal-shadow
+  class={`m-5 p-5 cursor-pointer lg:w-1/2 font-semibold font-publicSans border-black border-2 neo-brutal-shadow
   transform -translate-x-1/2 -translate-y-1/2 ${
     flip ? "transform-growth-minus" : "transform-growth-plus"
   }  ${defaultColor}`}
