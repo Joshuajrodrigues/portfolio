@@ -14,21 +14,58 @@ const {
   image = "",
 } = Astro.props;
 ---
+<script>
+  const colors = [
+    "bg-pink-400",
+    "bg-teal-400",
+    "bg-orange-400",
+    "bg-blue-400",
+    "bg-purple-400",
+  ];
+  
+    const cards = document.querySelectorAll<HTMLParagraphElement>(".chamaleon");
+  
+  
+    cards.forEach((card) => {
+  
+      card.addEventListener("click", () => {
+        changeColors(card)
+      });
+      card.addEventListener("touchstart", () => {
+        changeColors(card)
+      });
+    });
+  
+    const changeColors=(card:HTMLParagraphElement)=>{
+      let currentColor = card.classList.value.split(" ").at(-1);
+        let filteredColors = colors.filter((color) => color !== currentColor);
+        //   console.log("currentColor",currentColor);
+        let newColor =
+          filteredColors[
+            Math.floor(Math.floor(Math.random() * filteredColors.length))
+          ];
+        //   console.log("newColor",newColor);
+        console.log("currentColor",currentColor);
+        card.classList.replace(currentColor!, newColor);
+        //  console.log("cliecked",card.classList);
+    }
+  </script>
 
-<div class={` p-5 lg:p-0 w-full lg:h-[400px] lg:w-1/2 lg:border-black lg:border-4  ${defaultColor}`}>
-  <div
-    class=`m-2 flex justify-between items-center  ${
-    flip ? "flex-row" : "flex-row-reverse"
-  }`
-  >
-    <div class=`${flip ? 'pr-3':'pl-3'} font-semibold`>
-      <h4 class="text-base sm:text-lg md:text-3xl font-extrabold">{title}</h4>
+<div
+  class={` p-5 lg:p-0 w-full lg:h-[400px] lg:w-1/2 lg:border-black lg:border-4 chamaleon ${defaultColor}`}
+>
+  <div class=`m-2 flex flex-col  justify-between items-center `>
+    <div class="border-b-4 flex justify-start h-64 border-black border-4 font-semibold">
+      {image && <Image src={image} alt={title} />}
+    </div>
+    <div class=`mt-4 font-semibold`>
+      <h4 class="text-2xl  md:text-3xl font-extrabold">{title}</h4>
       <p class="md:text-xl md:my-2">{desp}</p>
       <section class="md:text-xl">
         <div class="flex">
           <a
             target="_blank"
-            class=`p-2 ${flip?'ml-1 my-1':'mr-1 my-1'} flex items-center text-white bg-black`
+            class=`p-2 my-1 flex items-center text-white bg-black`
             href={visit}
             >Visit <svg
               class="ml-1"
@@ -75,15 +112,10 @@ const {
           ></a
         >
       </section>
-      <div class="my-2 flex flex-wrap ">
+      <div class="my-2 flex flex-wrap">
         {tags.map((tag: string) => <Tags text={tag} />)}
       </div>
     </div>
-    <div class="border-b-4 w-72 border-black border-4 font-semibold">
-      {image && <Image src={image} alt={title} />}
-    </div>
   </div>
- 
 </div>
 <hr class="border-black border-4 w-full h-1 lg:hidden" />
-
