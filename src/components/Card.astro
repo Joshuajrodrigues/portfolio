@@ -30,26 +30,41 @@ const colors = [
 </script>
 <p
   id="about-card"
-  class={`m-5 p-5 lg:w-1/2 font-semibold font-publicSans border-black border-2 neo-brutal-shadow
- ${
-    flip ? "-rotate-2" : "rotate-2"
-  } transform -translate-x-1/2 -translate-y-1/2 transform-growth  ${defaultColor}`}
+  class={`m-5 p-5 cursor-pointer lg:w-1/2 font-semibold font-publicSans border-black border-2 neo-brutal-shadow
+  transform -translate-x-1/2 -translate-y-1/2 ${
+    flip ? "transform-growth-minus" : "transform-growth-plus"
+  }  ${defaultColor}`}
 >
   {text}
 </p>
 <style>
-  .transform-growth {
-transform: scale(1);
+  .transform-growth-plus {
+transform: scale(1) rotate(3deg);
 transition: transform 0.3s ease;
 }
 
 /* Apply the hover effect */
-.transform-growth:hover {
-transform: scale(1.1) rotate(5deg);
+.transform-growth-plus:hover {
+transform: scale(1.1) rotate(0);
 }
 
 /* Apply the click effect */
-.transform-growth:active {
-transform: scale(1.1) rotate(5deg);
+.transform-growth-plus:active {
+transform: scale(1.1) rotate(3deg);
+}
+
+.transform-growth-minus {
+transform: scale(1) rotate(-3deg);
+transition: transform 0.3s ease;
+}
+
+/* Apply the hover effect */
+.transform-growth-minus:hover {
+transform: scale(1.1) rotate(0);
+}
+
+/* Apply the click effect */
+.transform-growth-minus:active {
+transform: scale(1.1) rotate(-3deg);
 }
 </style>
