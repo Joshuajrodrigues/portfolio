@@ -79,7 +79,10 @@ image: "/manga.svg"
   </ul>
 </div>
 
+</div>
+
 <style>
+
       h1 {
         margin-top: 2rem;
         font-weight: 800;

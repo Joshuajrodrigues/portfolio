@@ -1,9 +1,25 @@
 
 
-<div class="flex justify-end">
-
-    <a class="p-2 flex m-3 w-24 items-center green border-4 border-white font-bold bg-black text-white" href="/">
+<div class="flex justify-end lg:mx-64">
+    <a class="p-2 flex m-3 w-24 items-center green border-4 border-white font-bold bg-black text-white transform -translate-x-1/2 -translate-y-1/2 transform-growth" href="/">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#ffffff" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
         Back
     </a>
 </div>
+
+<style>
+    .transform-growth {
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+/* Apply the hover effect */
+.transform-growth:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Apply the click effect */
+.transform-growth:active {
+  transform: scale(1.1) rotate(-5deg);
+}
+</style>

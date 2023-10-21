@@ -7,7 +7,7 @@ export default {
 			fontFamily:{
 				rammettoOne:'Rammetto One,Times New Roman, serif',
 				publicSans: 'Public Sans Variable, sans-serif'
-			}
+			},
 		},
 	},
 	plugins: [],
