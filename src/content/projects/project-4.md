@@ -8,44 +8,76 @@ git: "https://github.com/Joshuajrodrigues/manga2epub4kindle"
 image: "/manga.svg"
 ---
 
-# The Problem
+<div class="mb-0 font-sans text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl flex flex-col items-center justify-center">
+  <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl font-bold mb-6">
+    The Problem
+  </h1>
+  <p>
+    In 2023, I acquired a Kindle and had a substantial collection of manga (Japanese comic books) in the form of cbz/cbr formats. Unfortunately, Kindle does not support these formats, and I needed to convert them into epub files. I attempted various converters like KCC (Kindle Comic Converter), but they often resulted in file sizes exceeding 200MB, which Kindle does not allow for cloud storage. To overcome this limitation, I decided to develop my own solution.
+  </p>
 
-In 2023, I acquired a Kindle and had a substantial collection of manga (Japanese comic books) in the form of cbz/cbr formats. Unfortunately, Kindle does not support these formats, and I needed to convert them into epub files. I attempted various converters like KCC (Kindle Comic Converter), but they often resulted in file sizes exceeding 200MB, which Kindle does not allow for cloud storage. To overcome this limitation, I decided to develop my own solution.
+  <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl font-bold mb-6">
+    The Solution
+  </h1>
+  <p>
+    Manga2epub4kindle, while a mouthful, is a practical terminal script that leverages the Sharp library to process images.
+  </p>
+  <img src="/manga/tui.png" class="border-4 border-black mb-4 lg:w-1/2 " alt="Terminal UI">
 
-# The Solution
+  <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl font-bold mb-6">
+    Features
+  </h1>
+  <ul class="list-disc ml-6 mb-4">
+    <li>
+      <strong>Generates Compact EPUB Files:</strong> The app consistently produces smaller EPUB files than the input files, ensuring Kindle compatibility.
+    </li>
+    <li>
+      <strong>Saves/Loads Metadata:</strong> The script stores all your metadata in a JSON file, making it convenient for batch or volume conversions.
+    </li>
+    <li>
+      <strong>Adds Metadata:</strong> It eliminates issues with undefined authors or titles, enhancing the organization of your manga on Kindle.
+    </li>
+    <li>
+      <strong>Trims Borders:</strong> White borders, which can distort images on smaller Kindles, are removed.
+    </li>
+  </ul>
 
-Manga2epub4kindle, while a mouthful, is a practical terminal script that leverages the Sharp library to process images.
+  <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl font-bold mb-6">
+    Challenges
+  </h1>
+  <ol class="list-decimal ml-6 mb-4">
+    <li>
+      <strong>File Systems:</strong> Handling file systems asynchronously and synchronously presented a significant challenge.
+      <p>
+        <strong>Solution:</strong> Extensive research, tutorials, and Stack Overflow queries were necessary to overcome these hurdles.
+      </p>
+    </li>
+    <li>
+      <strong>Kindle-Specific EPUB Format:</strong> Kindle requires a specific EPUB format for comics, which added complexity to the conversion process.
+      <p>
+        <strong>Solution:</strong> I delved into the source code of KCC to understand the necessary meta tags for Kindle compatibility.
+      </p>
+    </li>
+    <li>
+      <strong>Node.js EPUB Library Limitations:</strong> The library available for creating EPUB files in Node.js was deprecated and did not support the required meta tags for Kindle.
+      <p>
+        <strong>Solution:</strong> I forked the library, made the necessary modifications, and adapted it to meet the specific needs of Kindle compatibility.
+      </p>
+    </li>
+  </ol>
 
-![terminal ui](/manga/tui.png)
-# Features
-
-- **Generates Compact EPUB Files:** The app consistently produces smaller EPUB files than the input files, ensuring Kindle compatibility.
-
-- **Saves/Loads Metadata:** The script stores all your metadata in a JSON file, making it convenient for batch or volume conversions.
-
-- **Adds Metadata:** It eliminates issues with undefined authors or titles, enhancing the organization of your manga on Kindle.
-
-- **Trims Borders:** White borders, which can distort images on smaller Kindles, are removed.
-
-# Challenges
-
-1. **File Systems:** Handling file systems asynchronously and synchronously presented a significant challenge.
-
-   - **Solution:** Extensive research, tutorials, and Stack Overflow queries were necessary to overcome these hurdles.
-
-2. **Kindle-Specific EPUB Format:** Kindle requires a specific EPUB format for comics, which added complexity to the conversion process.
-
-   - **Solution:** I delved into the source code of KCC to understand the necessary meta tags for Kindle compatibility.
-
-3. **Node.js EPUB Library Limitations:** The library available for creating EPUB files in Node.js was deprecated and did not support the required meta tags for Kindle.
-
-   - **Solution:** I forked the library, made the necessary modifications, and adapted it to meet the specific needs of Kindle compatibility.
-
-# Future Plans
-
-- **Enhancements and Improvements:** While the app is functional, there is room for quality-of-life features and improvements. Additionally, it currently operates on Node.js 16, so I aim to make it compatible with the latest Node.js versions.
-
-- **Bun.js Integration:** Exploring the integration of the Bun.js JavaScript runtime, known for its speed and promise, to potentially enhance the app's performance and capabilities.
+  <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl font-bold mb-6">
+    Future Plans
+  </h1>
+  <ul class="list-disc ml-6 mb-4">
+    <li>
+      <strong>Enhancements and Improvements:</strong> While the app is functional, there is room for quality-of-life features and improvements. Additionally, it currently operates on Node.js 16, so I aim to make it compatible with the latest Node.js versions.
+    </li>
+    <li>
+      <strong>Bun.js Integration:</strong> Exploring the integration of the Bun.js JavaScript runtime, known for its speed and promise, to potentially enhance the app's performance and capabilities.
+    </li>
+  </ul>
+</div>
 
 <style>
       h1 {
