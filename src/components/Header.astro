@@ -17,8 +17,45 @@ const yearsPassed = timeDiff / (1000 * 60 * 60 * 24 * 365.25);
 
 // Round to the nearest half-year
 const roundedYears = Math.floor(yearsPassed);
----
 
+
+---
+<script>
+  const colors = [
+  "bg-pink-400",
+  "bg-teal-400",
+  "bg-orange-400",
+  "bg-blue-400",
+  "bg-purple-400",
+];
+
+  const cards = document.querySelectorAll("p");
+
+
+  cards.forEach((card) => {
+
+    card.addEventListener("click", () => {
+      changeColors(card)
+    });
+    card.addEventListener("touchstart", () => {
+      changeColors(card)
+    });
+  });
+
+  const changeColors=(card:HTMLParagraphElement)=>{
+    let currentColor = card.classList.value.split(" ").at(-1);
+      let filteredColors = colors.filter((color) => color !== currentColor);
+      //   console.log("currentColor",currentColor);
+      let newColor =
+        filteredColors[
+          Math.floor(Math.floor(Math.random() * filteredColors.length))
+        ];
+      //   console.log("newColor",newColor);
+      console.log("currentColor",currentColor,card.classList);
+      card.classList.replace(currentColor!, newColor);
+      //  console.log("cliecked",card.classList);
+  }
+</script>
 <header class="flex flex-col items-center justify-center bg-yellow-400">
   {(<Title />)}
   <div>
@@ -26,32 +63,32 @@ const roundedYears = Math.floor(yearsPassed);
   </div>
   {
     !hideIntroCards ? (
-      <div class={`p-5 md:p-7 lg:p-12 w-full md:w-9/12 lg:w-1/2 bg-yellow-400  font-bold text-xl md:text-3xl`}>
+      <div class={`p-5 md:p-7 lg:p-12 w-full md:w-9/12 lg:w-8/12 bg-yellow-400  font-bold text-xl md:text-3xl `}>
         <p
-          class="p-2 m-3 bg-teal-400 rotate-2 border-black border-2 neo-brutal-shadow
-      hover:neo-brutal-shadow-active transition duration-500 ease-in-out"
+          class="p-2 m-3  rotate-2 border-black border-2 neo-brutal-shadow lg:my-8
+      hover:neo-brutal-shadow-active transition duration-500 ease-in-out bg-teal-400"
           id="exp"
         >
           I have {roundedYears}+ years of experience in web development.
         </p>
         <p
-          class="p-2 m-3 bg-pink-400 -rotate-2 border-black border-2 neo-brutal-shadow
-      hover:neo-brutal-shadow-active transition duration-500 ease-in-out"
+          class="p-2 m-3  -rotate-2 border-black border-2 neo-brutal-shadow lg:my-8
+      hover:neo-brutal-shadow-active transition duration-500 ease-in-out bg-pink-400"
         >
           My professional passion lies in crafting innovative, web-based
           solutions to elegantly address the challenges of everyday life.
         </p>
         <p
-          class="p-2 m-3 bg-orange-400 rotate-2 border-black border-2 neo-brutal-shadow
-      hover:neo-brutal-shadow-active transition duration-500 ease-in-out"
+          class="p-2 m-3  rotate-2 border-black border-2 neo-brutal-shadow lg:my-8
+      hover:neo-brutal-shadow-active transition duration-500 ease-in-out bg-orange-400"
         >
           Technologies I commonly use: <br /> Tailwind CSS, SCSS/LESS,
           Javascript, Typescript, Nextjs, Reactjs, Redux, Zustand, Nodejs, Ant
           Design, Webpack, Vite.
         </p>
         <p
-          class="p-2 m-3 bg-blue-400 -rotate-2 border-black border-2 neo-brutal-shadow
-      hover:neo-brutal-shadow-active transition duration-500 ease-in-out"
+          class="p-2 m-3  -rotate-2 border-black border-2 neo-brutal-shadow lg:my-8
+      hover:neo-brutal-shadow-active transition duration-500 ease-in-out bg-blue-400"
         >
          <span>Currently working with the lovely people at</span> 
           <a class="" href="https://www.teknorix.com/">
@@ -79,8 +116,8 @@ const roundedYears = Math.floor(yearsPassed);
     ) : (
       <div class={`p-5 lg:p-12 w-full md:w-9/12 lg:w-1/2 bg-yellow-400  font-bold text-xl md:text-3xl`}>
         <p
-          class={`p-2 m-3 ${extraColor} -rotate-2 border-black border-2 neo-brutal-shadow
-      hover:neo-brutal-shadow-active transition duration-500 ease-in-out`}
+          class={`p-2 m-3  -rotate-2 border-black border-2 neo-brutal-shadow
+      hover:neo-brutal-shadow-active transition duration-500 ease-in-out ${extraColor}`}
         >
           Thank you for taking your time to read through my journey.
         </p>

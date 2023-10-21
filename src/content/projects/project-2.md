@@ -9,7 +9,7 @@ git: "https://github.com/Joshuajrodrigues/cbtjournal"
 image: "/konitive.svg"
 ---
 
-<div class="mb-0 font-sans text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl flex flex-col items-center justify-center">
+<div class="mb-0 font-publicSans text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl flex flex-col items-center justify-center">
   <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl font-bold mb-6">
     The Problem
   </h1>

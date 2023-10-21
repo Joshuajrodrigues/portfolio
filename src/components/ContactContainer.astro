@@ -1,16 +1,8 @@
 <script>
   let copy = document.getElementById("copy");
-  let copyIcon = document.getElementById("copy-icon");
-  let copiedIcon = document.getElementById("copied-icon");
-  copiedIcon!.style.display = "none";
+
   copy?.addEventListener("click", () => {
     navigator.clipboard.writeText("joshuarodriguesdev@gmail.com");
-    copyIcon!.style.display = "none";
-    copiedIcon!.style.display = "inline";
-    setTimeout(() => {
-      copyIcon!.style.display = "inline";
-      copiedIcon!.style.display = "none";
-    }, 5000);
   });
 </script>
 
