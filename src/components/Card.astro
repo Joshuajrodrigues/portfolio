@@ -22,6 +22,7 @@ const colors = [
           Math.floor(Math.floor(Math.random() * filteredColors.length))
         ];
       //   console.log("newColor",newColor);
+      console.log("currentColor",currentColor);
       card.classList.replace(currentColor!, newColor);
       //  console.log("cliecked",card.classList);
     });
@@ -30,9 +31,25 @@ const colors = [
 <p
   id="about-card"
   class={`m-5 p-5 lg:w-1/2 font-semibold font-publicSans border-black border-2 neo-brutal-shadow
-hover:neo-brutal-shadow-active ${
+ ${
     flip ? "-rotate-2" : "rotate-2"
-  } transition duration-500 ease-in-out ${defaultColor}`}
+  } transform -translate-x-1/2 -translate-y-1/2 transform-growth  ${defaultColor}`}
 >
   {text}
 </p>
+<style>
+  .transform-growth {
+transform: scale(1);
+transition: transform 0.3s ease;
+}
+
+/* Apply the hover effect */
+.transform-growth:hover {
+transform: scale(1.1) rotate(5deg);
+}
+
+/* Apply the click effect */
+.transform-growth:active {
+transform: scale(1.1) rotate(5deg);
+}
+</style>
