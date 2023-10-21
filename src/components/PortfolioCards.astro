@@ -14,42 +14,7 @@ const {
   image = "",
 } = Astro.props;
 ---
-<script>
-  const colors = [
-    "bg-pink-400",
-    "bg-teal-400",
-    "bg-orange-400",
-    "bg-blue-400",
-    "bg-purple-400",
-  ];
-  
-    const cards = document.querySelectorAll<HTMLParagraphElement>(".chamaleon");
-  
-  
-    cards.forEach((card) => {
-  
-      card.addEventListener("click", () => {
-        changeColors(card)
-      });
-      card.addEventListener("touchstart", () => {
-        changeColors(card)
-      });
-    });
-  
-    const changeColors=(card:HTMLParagraphElement)=>{
-      let currentColor = card.classList.value.split(" ").at(-1);
-        let filteredColors = colors.filter((color) => color !== currentColor);
-        //   console.log("currentColor",currentColor);
-        let newColor =
-          filteredColors[
-            Math.floor(Math.floor(Math.random() * filteredColors.length))
-          ];
-        //   console.log("newColor",newColor);
-        console.log("currentColor",currentColor);
-        card.classList.replace(currentColor!, newColor);
-        //  console.log("cliecked",card.classList);
-    }
-  </script>
+
 
 <div
   class={` p-5 lg:p-0 w-full lg:h-[400px] lg:w-1/2 lg:border-black lg:border-4 chamaleon ${defaultColor}`}
