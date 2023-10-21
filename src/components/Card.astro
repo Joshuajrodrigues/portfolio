@@ -11,7 +11,7 @@ const colors = [
   "bg-purple-400",
 ];
 
-  const cards = document.querySelectorAll("p");
+  const cards = document.querySelectorAll<HTMLParagraphElement>(".chamaleon");
 
 
   cards.forEach((card) => {
@@ -40,7 +40,7 @@ const colors = [
 </script>
 <p
   id="about-card"
-  class={`m-5 p-5 cursor-pointer lg:w-1/2 font-semibold font-publicSans border-black border-2 neo-brutal-shadow
+  class={`m-5 chamaleon p-5 cursor-pointer lg:w-1/2 font-semibold font-publicSans border-black border-2 neo-brutal-shadow
   transform -translate-x-1/2 -translate-y-1/2 ${
     flip ? "transform-growth-minus" : "transform-growth-plus"
   }  ${defaultColor}`}

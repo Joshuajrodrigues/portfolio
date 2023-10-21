@@ -29,7 +29,7 @@ const roundedYears = Math.floor(yearsPassed);
   "bg-purple-400",
 ];
 
-  const cards = document.querySelectorAll("p");
+  const cards = document.querySelectorAll<HTMLParagraphElement>(".chamaleon");
 
 
   cards.forEach((card) => {
@@ -65,21 +65,21 @@ const roundedYears = Math.floor(yearsPassed);
     !hideIntroCards ? (
       <div class={`p-5 md:p-7 lg:p-12 w-full md:w-9/12 lg:w-8/12 bg-yellow-400  font-bold text-xl md:text-3xl `}>
         <p
-          class="p-2 m-3  rotate-2 border-black border-2 neo-brutal-shadow lg:my-8
+          class="p-2 m-3 chamaleon rotate-2 border-black border-2 neo-brutal-shadow lg:my-8
       hover:neo-brutal-shadow-active transition duration-500 ease-in-out bg-teal-400"
           id="exp"
         >
           I have {roundedYears}+ years of experience in web development.
         </p>
         <p
-          class="p-2 m-3  -rotate-2 border-black border-2 neo-brutal-shadow lg:my-8
+          class="p-2 m-3 chamaleon -rotate-2 border-black border-2 neo-brutal-shadow lg:my-8
       hover:neo-brutal-shadow-active transition duration-500 ease-in-out bg-pink-400"
         >
           My professional passion lies in crafting innovative, web-based
           solutions to elegantly address the challenges of everyday life.
         </p>
         <p
-          class="p-2 m-3  rotate-2 border-black border-2 neo-brutal-shadow lg:my-8
+          class="p-2 m-3 chamaleon rotate-2 border-black border-2 neo-brutal-shadow lg:my-8
       hover:neo-brutal-shadow-active transition duration-500 ease-in-out bg-orange-400"
         >
           Technologies I commonly use: <br /> Tailwind CSS, SCSS/LESS,
@@ -87,7 +87,7 @@ const roundedYears = Math.floor(yearsPassed);
           Design, Webpack, Vite.
         </p>
         <p
-          class="p-2 m-3  -rotate-2 border-black border-2 neo-brutal-shadow lg:my-8
+          class="p-2 m-3 chamaleon -rotate-2 border-black border-2 neo-brutal-shadow lg:my-8
       hover:neo-brutal-shadow-active transition duration-500 ease-in-out bg-blue-400"
         >
          <span>Currently working with the lovely people at</span> 
@@ -116,7 +116,7 @@ const roundedYears = Math.floor(yearsPassed);
     ) : (
       <div class={`p-5 lg:p-12 w-full md:w-9/12 lg:w-1/2 bg-yellow-400  font-bold text-xl md:text-3xl`}>
         <p
-          class={`p-2 m-3  -rotate-2 border-black border-2 neo-brutal-shadow
+          class={`p-2 m-3 chamaleon -rotate-2 border-black border-2 neo-brutal-shadow
       hover:neo-brutal-shadow-active transition duration-500 ease-in-out ${extraColor}`}
         >
           Thank you for taking your time to read through my journey.
