@@ -21,13 +21,16 @@ console.log("image", image);
     <hr class="border-black border-4 w-full h-1" ></hr>
     <main class="mt-5">
       <Backlink />
-      <h1 class="break-all text-center text-4xl font-extrabold">{title}</h1>
-      <img class=" border-0" width={400} height={400} src={image} alt={title} />
-      <section class="text-center text-2xl font-extrabold">
-        {desp}
-      </section>
-      <div class="m-2 p-2">
-        <slot />
+      <div class=" lg:mx-64 flex flex-col items-center justify-center">
+
+        <h1 class="break-all text-center text-4xl font-extrabold underline">{title}</h1>
+        <section class="text-center text-xl font-bold">
+          {desp}
+        </section>
+        <img class=" border-0" width={400} height={400} src={image} alt={title} />
+        <div class="m-2 p-2">
+          <slot />
+        </div>
       </div>
       <Backlink />
     </main>
