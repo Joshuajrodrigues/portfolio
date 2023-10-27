@@ -1,0 +1,26 @@
+---
+const { link } = Astro.props;
+---
+
+<div
+  class=" transform -translate-x-1/2 -translate-y-1/2 transform-growth"
+>
+  <slot />
+</div>
+
+<style>
+  .transform-growth {
+    transform: scale(1);
+    transition: transform 0.3s ease;
+  }
+
+  /* Apply the hover effect */
+  .transform-growth:hover {
+    transform: scale(1.1) rotate(5deg);
+  }
+
+  /* Apply the click effect */
+  .transform-growth:active {
+    transform: scale(1.1) rotate(-5deg);
+  }
+</style>

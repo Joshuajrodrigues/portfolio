@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import Tags from "./Tags.astro";
 import text from "../images/konitive.svg";
+import DancyButtons from "./DancyButtons.astro";
 const {
   title,
   desp,
@@ -15,52 +16,77 @@ const {
 } = Astro.props;
 ---
 
+<script>
+  let links = document.querySelectorAll("a");
+  links.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+  });
+</script>
 
 <div
-  class={` p-5 lg:p-0 w-full lg:h-[600px] lg:w-1/2 lg:border-black lg:border-4 chamaleon ${defaultColor}`}
+  class={` p-5 lg:p-10 w-full lg:h-[660px] lg:w-1/2 lg:border-black lg:border-4 chamaleon ${defaultColor}`}
 >
   <div class=`m-2 flex flex-col  justify-between items-center `>
-    <div class=" flex w-full justify-start h-64  font-semibold">
-      {image && <Image src={image} alt={title} />}
+    <div
+      class="flex w-full justify-start items-start md:justify-center md:items-center font-semibold"
+    >
+      <DancyButtons>
+        {
+          image && (
+            <Image
+              class={"h-64 w-72 border-black border-4 neo-brutal-shadow "}
+              src={image}
+              alt={title}
+            />
+          )
+        }
+      </DancyButtons>
     </div>
     <div class=`mt-4 font-semibold w-full`>
-      <h4 class="text-2xl  md:text-3xl font-extrabold">{title}</h4>
+      <h4 class="text-2xl md:text-3xl font-extrabold">{title}</h4>
       <p class="md:text-xl md:my-2">{desp}</p>
       <section class="md:text-xl">
         <div class="flex">
-          <a
-            target="_blank"
-            class=`p-2 my-1 flex items-center text-white bg-black`
-            href={visit}
-            >Visit <svg
-              class="ml-1"
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="#ffffff"
-              viewBox="0 0 256 256"
-              ><path
-                d="M224,104a8,8,0,0,1-16,0V59.32l-66.33,66.34a8,8,0,0,1-11.32-11.32L196.68,48H152a8,8,0,0,1,0-16h64a8,8,0,0,1,8,8Zm-40,24a8,8,0,0,0-8,8v72H48V80h72a8,8,0,0,0,0-16H48A16,16,0,0,0,32,80V208a16,16,0,0,0,16,16H176a16,16,0,0,0,16-16V136A8,8,0,0,0,184,128Z"
-              ></path></svg
-            ></a
-          >
-          <a
-            target="_blank"
-            class="p-2 m-1 md:mx-3 flex items-center text-white bg-black"
-            href={git}
-            >Github<svg
-              class="ml-1"
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="#ffffff"
-              viewBox="0 0 256 256"
-              ><path
-                d="M224,104a8,8,0,0,1-16,0V59.32l-66.33,66.34a8,8,0,0,1-11.32-11.32L196.68,48H152a8,8,0,0,1,0-16h64a8,8,0,0,1,8,8Zm-40,24a8,8,0,0,0-8,8v72H48V80h72a8,8,0,0,0,0-16H48A16,16,0,0,0,32,80V208a16,16,0,0,0,16,16H176a16,16,0,0,0,16-16V136A8,8,0,0,0,184,128Z"
-              ></path></svg
-            ></a
-          >
+          <DancyButtons>
+            <a
+              target="_blank"
+              class=`p-2 my-1 flex items-center text-white bg-black`
+              href={visit}
+              >Visit <svg
+                class="ml-1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="#ffffff"
+                viewBox="0 0 256 256"
+                ><path
+                  d="M224,104a8,8,0,0,1-16,0V59.32l-66.33,66.34a8,8,0,0,1-11.32-11.32L196.68,48H152a8,8,0,0,1,0-16h64a8,8,0,0,1,8,8Zm-40,24a8,8,0,0,0-8,8v72H48V80h72a8,8,0,0,0,0-16H48A16,16,0,0,0,32,80V208a16,16,0,0,0,16,16H176a16,16,0,0,0,16-16V136A8,8,0,0,0,184,128Z"
+                ></path></svg
+              ></a
+            >
+          </DancyButtons>
+          <DancyButtons>
+            <a
+              target="_blank"
+              class="p-2 m-1 md:mx-3 flex items-center text-white bg-black"
+              href={git}
+              >Github<svg
+                class="ml-1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="#ffffff"
+                viewBox="0 0 256 256"
+                ><path
+                  d="M224,104a8,8,0,0,1-16,0V59.32l-66.33,66.34a8,8,0,0,1-11.32-11.32L196.68,48H152a8,8,0,0,1,0-16h64a8,8,0,0,1,8,8Zm-40,24a8,8,0,0,0-8,8v72H48V80h72a8,8,0,0,0,0-16H48A16,16,0,0,0,32,80V208a16,16,0,0,0,16,16H176a16,16,0,0,0,16-16V136A8,8,0,0,0,184,128Z"
+                ></path></svg
+              ></a
+            >
+          </DancyButtons>
         </div>
+
         <a
           class="p-2 w-fit md:my-3 border border-black flex items-center text-black bg-white"
           href={readmore}
