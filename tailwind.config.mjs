@@ -6,7 +6,8 @@ export default {
 		extend: {
 			fontFamily:{
 				rammettoOne:'Rammetto One,Times New Roman, serif',
-				publicSans: 'Public Sans Variable, sans-serif'
+				publicSans: 'Public Sans Variable, sans-serif',
+				cursive:'Caveat Variable, sans-serif'
 			},
 		},
 	},

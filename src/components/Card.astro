@@ -1,8 +1,21 @@
 ---
-let { text, defaultColor, flip = false, imageurl="https://avatars.githubusercontent.com/u/54748294?v=4", alt,bg="bg-black" } = Astro.props;
+let {
+  text,
+  defaultColor,
+  flip = false,
+  imageurl = "https://avatars.githubusercontent.com/u/54748294?v=4",
+  alt,
+  bg = "bg-black",
+  extra,
+  startExtra
+} = Astro.props;
 import { Image } from "astro:assets";
 ---
 
+  {
+    startExtra &&
+    <span class="text-sm md:text-lg font-cursive">Click on anything colorful  to change colors</span>
+  }
 <p
   id="about-card"
   class={`m-5 w-full chamaleon p-5 cursor-pointer lg:w-1/2 font-semibold font-publicSans border-black border-2 neo-brutal-shadow
@@ -12,16 +25,25 @@ import { Image } from "astro:assets";
 >
   {text}
   <slot />
+  <div
+    class=`m-5 w-full -mt-14 -mb-14 md:-mt-[4.5rem] md:-mb-[4.5rem] p-5 cursor-pointer lg:w-1/2 font-semibold font-publicSans flex ${flip?" justify-end items-center":"justify-start items-center"} `
+  >
+    <Image
+      src={imageurl}
+      alt={"profile"}
+      class={`w-16 h-16 md:w-20 md:h-20 z-10 rounded-full border-4 border-black ${bg}`}
+      width={100}
+      height={100}
+    />
+  {
+    extra && (
+      <p class="text-sm md:text-lg z-10 font-cursive">
+        ⤺ This could be your company logo
+      </p>
+    )
+  }
+  </div>
 </p>
-<div class=`m-5 w-full -mt-14 -mb-14 md:-mt-20 md:-mb-20 p-5 cursor-pointer lg:w-1/2 font-semibold font-publicSans flex ${flip?" justify-end items-end":"justify-start items-start"}`>
-  <Image
-    src={imageurl}
-    alt={"profile"}
-    class={`w-16 h-16 md:w-32 md:h-32 z-10 rounded-full border-4 border-black ${bg}`}
-    width={100}
-    height={100}
-  />
-</div>
 <style>
   .transform-growth-plus {
     transform: scale(1) rotate(3deg);

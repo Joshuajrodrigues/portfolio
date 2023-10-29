@@ -26,15 +26,16 @@ const roundedYears = Math.floor(yearsPassed);
 
 <header class="flex flex-col items-center justify-center bg-yellow-400">
   {(<Title />)}
-  <div>
-    {(<Button />)}
+  <div class="flex items-center">
+    {(<Button />)} 
   </div>
+  
   {
     !hideIntroCards ? (
       <div
         class={`p-5 md:p-7 w-full flex flex-col items-center justify-center  bg-yellow-400  font-bold text-xl md:text-3xl `}
       >
-        <Card defaultColor={colors[1]} bg="bg-white" imageurl={suitcase}>
+        <Card startExtra defaultColor={colors[1]} bg="bg-white" imageurl={suitcase}>
           I have {roundedYears}+ years of experience with fontend engineering
           and web development technologies.
           </Card>
@@ -53,7 +54,7 @@ const roundedYears = Math.floor(yearsPassed);
           Design, Webpack, Vite.
         </Card>
 
-        <Card defaultColor={colors[4]} bg="bg-white" imageurl="https://www.teknorix.com/wp-content/uploads/2019/01/teknorix-logomark.svg" flip>
+        <Card extra defaultColor={colors[4]} bg="bg-white" imageurl="https://www.teknorix.com/wp-content/uploads/2019/01/teknorix-logomark.svg" flip>
           <span>I'm currently working with the lovely people at</span>
           <a class="" href="https://www.teknorix.com/">
             Teknorix{" "}

@@ -6,6 +6,7 @@ specifiers:
   '@astrojs/sitemap': ^3.0.1
   '@astrojs/tailwind': ^5.0.2
   '@astrojs/vercel': ^5.0.2
+  '@fontsource-variable/caveat': ^5.0.15
   '@fontsource-variable/public-sans': ^5.0.14
   '@fontsource/rammetto-one': ^5.0.15
   '@fontsource/sigmar-one': ^5.0.15
@@ -22,6 +23,7 @@ dependencies:
   '@astrojs/sitemap': 3.0.1
   '@astrojs/tailwind': 5.0.2_not6qeptknfdqib5riidevaymm
   '@astrojs/vercel': 5.0.2_astro@3.2.4
+  '@fontsource-variable/caveat': 5.0.15
   '@fontsource-variable/public-sans': 5.0.14
   '@fontsource/rammetto-one': 5.0.15
   '@fontsource/sigmar-one': 5.0.15
@@ -796,6 +798,10 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@fontsource-variable/caveat/5.0.15:
+    resolution: {integrity: sha512-kADNQVxkK4uSGeY6ETCZzpW3s4N9p2IgAmOonJmIirUMlQwlTJGEywzJAC7ANyRn/mrL7/MNznLMeqyYjDnFBg==}
+    dev: false
 
   /@fontsource-variable/public-sans/5.0.14:
     resolution: {integrity: sha512-cSIE/4llneUmvID/5pjHp+zxqtZZ3vnI5KGBFbcC7SyhxRxqfsUFJ44EhSxtO0EdwJOBu/hAVDtn3a9kgkU++w==}

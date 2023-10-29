@@ -1,5 +1,7 @@
 @import "@fontsource/rammetto-one";
 @import "@fontsource-variable/public-sans";
+@import '@fontsource-variable/caveat';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
