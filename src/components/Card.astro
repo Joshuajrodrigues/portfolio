@@ -7,15 +7,18 @@ let {
   alt,
   bg = "bg-black",
   extra,
-  startExtra
+  startExtra,
 } = Astro.props;
 import { Image } from "astro:assets";
 ---
 
-  {
-    startExtra &&
-    <span class="text-sm md:text-lg font-cursive">Click on anything colorful  to change colors</span>
-  }
+{
+  startExtra && (
+    <span class="text-sm md:text-lg font-cursive">
+      Click on anything colorful to change colors
+    </span>
+  )
+}
 <p
   id="about-card"
   class={`m-5 w-full chamaleon p-5 cursor-pointer lg:w-1/2 font-semibold font-publicSans border-black border-2 neo-brutal-shadow
@@ -28,6 +31,24 @@ import { Image } from "astro:assets";
   <div
     class=`m-5 w-full -mt-14 -mb-14 md:-mt-[4.5rem] md:-mb-[4.5rem] p-5 cursor-pointer lg:w-1/2 font-semibold font-publicSans flex ${flip?" justify-end items-center":"justify-start items-center"} `
   >
+    {
+      extra && (
+      
+        <p class="text-sm md:text-lg z-10 font-cursive flex items-center">
+          This could be your company logo{" "}
+          <svg
+            class="mx-1"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="#000000"
+            viewBox="0 0 256 256"
+          >
+            <path d="M240,88v64a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h44.6l-22.36-22.21A88,88,0,0,0,40,184a8,8,0,0,1-16,0,104,104,0,0,1,177.54-73.54L224,132.77V88a8,8,0,0,1,16,0Z" />
+          </svg>
+        </p>
+      )
+    }
     <Image
       src={imageurl}
       alt={"profile"}
@@ -35,16 +56,12 @@ import { Image } from "astro:assets";
       width={100}
       height={100}
     />
-  {
-    extra && (
-      <p class="text-sm md:text-lg z-10 font-cursive">
-        ⤺ This could be your company logo
-      </p>
-    )
-  }
   </div>
 </p>
 <style>
+  .arrow-invert {
+    transform: scaleX(-1);
+  }
   .transform-growth-plus {
     transform: scale(1) rotate(3deg);
     transition: transform 0.3s ease;
