@@ -1,5 +1,5 @@
 ---
-let { text, defaultColor, flip = false, imageurl="https://avatars.githubusercontent.com/u/54748294?v=4", alt } = Astro.props;
+let { text, defaultColor, flip = false, imageurl="https://avatars.githubusercontent.com/u/54748294?v=4", alt,bg="bg-black" } = Astro.props;
 import { Image } from "astro:assets";
 ---
 
@@ -17,7 +17,7 @@ import { Image } from "astro:assets";
   <Image
     src={imageurl}
     alt={"profile"}
-    class={"w-16 h-16 md:w-32 md:h-32 z-10 rounded-full border-4 border-black bg-black"}
+    class={`w-16 h-16 md:w-32 md:h-32 z-10 rounded-full border-4 border-black ${bg}`}
     width={100}
     height={100}
   />
