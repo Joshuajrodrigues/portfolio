@@ -2,6 +2,8 @@
 import Title from "./Title.astro";
 import Button from "./Button.astro";
 import Card from "./Card.astro";
+import suitcase from '../images/suitcase.svg'
+
 import { colors } from "./AboutContainer.astro";
 
 const { hideIntroCards = false, extraColor = "" } = Astro.props;
@@ -31,33 +33,29 @@ const roundedYears = Math.floor(yearsPassed);
       <div
         class={`p-5 md:p-7 w-full flex flex-col items-center justify-center  bg-yellow-400  font-bold text-xl md:text-3xl `}
       >
-        <Card defaultColor={colors[1]}>
+        <Card defaultColor={colors[1]} imageurl={suitcase}>
           I have {roundedYears}+ years of experience with fontend engineering
           and web development technologies.
-        </Card>
+          </Card>
+         
         <Card
+          imageurl="https://raw.githubusercontent.com/facebook/react/3e09c27b880e1fecdb1eca5db510ecce37ea6be2/fixtures/dom/public/react-logo.svg"
           defaultColor={colors[2]}
           flip
           text={`My professional passion lies in crafting innovative, web-based
           solutions to elegantly address the challenges of everyday life.`}
         />
-        <Card defaultColor={colors[3]}>
+        <Card defaultColor={colors[3]} imageurl="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/900px-JavaScript-logo.png">
           Technologies I commonly use: <br /> Tailwind CSS, SCSS/LESS,
           Javascript, Typescript, Nextjs, Reactjs, Redux, Zustand, Nodejs, Ant
           Design, Webpack, Vite.
         </Card>
 
-        <Card defaultColor={colors[4]} flip>
+        <Card defaultColor={colors[4]} imageurl="https://www.teknorix.com/wp-content/uploads/2019/01/teknorix-logomark.svg" flip>
           <span>I'm currently working with the lovely people at</span>
           <a class="" href="https://www.teknorix.com/">
             Teknorix{" "}
-            <img
-              class="inline"
-              src="https://www.teknorix.com/wp-content/uploads/2019/01/teknorix-logomark.svg"
-              alt="logo"
-              width="24"
-              height="24"
-            />
+        
             <svg
               class="mb-1 inline"
               xmlns="http://www.w3.org/2000/svg"

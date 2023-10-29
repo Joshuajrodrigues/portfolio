@@ -1,52 +1,59 @@
 ---
-let { text, defaultColor, flip = false, imageOnly } = Astro.props;
+let { text, defaultColor, flip = false, imageurl="https://avatars.githubusercontent.com/u/54748294?v=4", alt } = Astro.props;
+import { Image } from "astro:assets";
 ---
 
-{
-  !imageOnly ?
-  <p
-    id="about-card"
-    class={`m-5 w-full chamaleon p-5 cursor-pointer lg:w-1/2 font-semibold font-publicSans border-black border-2 neo-brutal-shadow
+<p
+  id="about-card"
+  class={`m-5 w-full chamaleon p-5 cursor-pointer lg:w-1/2 font-semibold font-publicSans border-black border-2 neo-brutal-shadow
     transform -translate-x-1/2 -translate-y-1/2 ${
       flip ? "transform-growth-minus" : "transform-growth-plus"
     }  ${defaultColor}`}
-  >
-    {text}
-    <slot/>
-  </p>:
-  <div class={`w-full chamaleon cursor-pointer lg:w-1/2 `}>
-    {text}
-    <slot/>
-  </div>
-}
+>
+  {text}
+  <slot />
+</p>
+<div class=`m-5 w-full -mt-14 -mb-14 md:-mt-20 md:-mb-20 p-5 cursor-pointer lg:w-1/2 font-semibold font-publicSans flex ${flip?" justify-end items-end":"justify-start items-start"}`>
+  <Image
+    src={imageurl}
+    alt={"profile"}
+    class={"w-16 h-16 md:w-32 md:h-32 z-10 rounded-full border-4 border-black bg-black"}
+    width={100}
+    height={100}
+  />
+</div>
 <style>
   .transform-growth-plus {
-transform: scale(1) rotate(3deg);
-transition: transform 0.3s ease;
-}
+    transform: scale(1) rotate(3deg);
+    transition: transform 0.3s ease;
+  }
 
-/* Apply the hover effect */
-.transform-growth-plus:hover {
-transform: scale(1.1) rotate(0);
-}
+  /* Apply the hover effect */
+  .transform-growth-plus:hover {
+    transform: scale(1.1) rotate(0);
+    z-index: 100;
+  }
 
-/* Apply the click effect */
-.transform-growth-plus:active {
-transform: scale(1.1) rotate(-3deg);
-}
+  /* Apply the click effect */
+  .transform-growth-plus:active {
+    transform: scale(1.1) rotate(-3deg);
+    z-index: 100;
+  }
 
-.transform-growth-minus {
-transform: scale(1) rotate(-3deg);
-transition: transform 0.3s ease;
-}
+  .transform-growth-minus {
+    transform: scale(1) rotate(-3deg);
+    transition: transform 0.3s ease;
+  }
 
-/* Apply the hover effect */
-.transform-growth-minus:hover {
-transform: scale(1.1) rotate(0);
-}
+  /* Apply the hover effect */
+  .transform-growth-minus:hover {
+    transform: scale(1.1) rotate(0);
+    z-index: 100;
+  }
 
-/* Apply the click effect */
-.transform-growth-minus:active {
-transform: scale(1.1) rotate(3deg);
-}
+  /* Apply the click effect */
+  .transform-growth-minus:active {
+    transform: scale(1.1) rotate(3deg);
+    z-index: 100;
+  }
 </style>

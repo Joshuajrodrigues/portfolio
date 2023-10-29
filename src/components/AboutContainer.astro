@@ -1,5 +1,10 @@
 ---
 import Card from "./Card.astro";
+import idea from '../images/idea.svg'
+import gears from '../images/gears.svg'
+import pets from '../images/pets.svg'
+import books from '../images/books.svg'
+import movie from '../images/movie.svg'
 export const colors = [
   "bg-pink-400",
   "bg-teal-400",
@@ -11,22 +16,26 @@ export const colors = [
 
 <div class=" p-5 md:p-7 text-xl md:text-3xl flex flex-col justify-center items-center">
   <Card
+    imageurl={idea}
     defaultColor={colors[1]}
     text={"I consider myself a problem solver, and many of my projects are born from the desire to find solutions to challenges I've personally encountered."}
   />
   <Card
+    imageurl={gears}
     defaultColor={colors[0]}
     flip
     text={"I'm someone who values a deep understanding of technology, going beyond mere abstractions. I often dedicate a significant amount of my time to unravel how technologies like React function and the problems they aim to solve."}
   />
   <Card
+    imageurl={movie}
     defaultColor={colors[2]}
     text={"I have a deep appreciation for cinema, particularly when it comes to discovering and enjoying rare and classic films from around the world. I relish watching works from renowned directors like Akira Kurosawa and Wong Kar-wai."}
   />
   <Card
+    imageurl={books}
     defaultColor={colors[3]}
     flip
     text="I thoroughly enjoy reading, and I devote a significant amount of my time to this pastime. My literary interests encompass genres such as thrillers, science fiction, and classic literature. At the moment, I am engrossed in The Brothers Karamazov."
   />
-  <Card defaultColor={colors[4]} text="I 💖 cats 😸, but I own a dog 🐶 and I 💖 him too." />
+  <Card imageurl={pets} defaultColor={colors[4]} text="I 💖 cats 😸, but I own a dog 🐶 and I 💖 him too." />
 </div>
