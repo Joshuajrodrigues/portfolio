@@ -1,6 +1,33 @@
----
-import { SITE_TITLE } from "../consts";
----
+<script>
+  	const colors = [
+	  "bg-pink-400",
+	  "bg-teal-400",
+	  "bg-orange-400",
+	  "bg-blue-400",
+	  "bg-purple-400",
+	  "bg-rose-400",
+    "bg-indigo-300",
+	 // "bg-emerald-400",
+	  //"bg-amber-400",
+	  "bg-lime-400"
+	];
+  let billboardTop = document.querySelector(".billboard-top")!
+  let billboardBottom = document.querySelector(".billboard-bottom")!
+  setInterval(()=>{
+   
+      let currentColor = billboardTop.classList.value.split(" ").at(-1);
+		  let filteredColors = colors.filter((color) => color !== currentColor);
+		  //   console.log("currentColor",currentColor);
+		  let newColor =
+			filteredColors[
+			  Math.floor(Math.floor(Math.random() * filteredColors.length))
+			];
+		  //   console.log("newColor",newColor);
+		  
+		  billboardTop.classList.replace(currentColor!, newColor);
+      billboardBottom.classList.replace(currentColor!, newColor);
+  },500)
+</script>
 
 <div class="m-5">
   <h2
@@ -10,12 +37,12 @@ import { SITE_TITLE } from "../consts";
         Hello world, I'm
     </span>
     <span
-      class="p-2 border-t-4 border-l-4 h-16 md:h-20 lg:h-24 xl:h-28 w-fit border-r-[8px] first-block inline-block bg-indigo-300 border-black"
+      class="p-2 billboard-top border-t-4 border-l-4 h-16 md:h-20 lg:h-24 xl:h-28 w-fit border-r-[8px] first-block inline-block border-black bg-indigo-300"
     >
       JOSHUA</span
     >
     <span
-      class="p-2 inline-block h-16 md:h-20 lg:h-24 xl:h-28 border-4 border-b-[6px] border-r-[8px] bg-indigo-300 border-black"
+      class="p-2 billboard-bottom inline-block h-16 md:h-20 lg:h-24 xl:h-28 border-4 border-b-[6px] border-r-[8px] border-black bg-indigo-300"
     >
       RODRIGUES</span
     >

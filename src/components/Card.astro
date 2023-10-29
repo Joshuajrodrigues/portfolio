@@ -1,18 +1,24 @@
 ---
-let { text, defaultColor, flip = false } = Astro.props;
+let { text, defaultColor, flip = false, imageOnly } = Astro.props;
 ---
 
-
-<p
-  id="about-card"
-  class={`m-5 w-full chamaleon p-5 cursor-pointer lg:w-1/2 font-semibold font-publicSans border-black border-2 neo-brutal-shadow
-  transform -translate-x-1/2 -translate-y-1/2 ${
-    flip ? "transform-growth-minus" : "transform-growth-plus"
-  }  ${defaultColor}`}
->
-  {text}
-  <slot/>
-</p>
+{
+  !imageOnly ?
+  <p
+    id="about-card"
+    class={`m-5 w-full chamaleon p-5 cursor-pointer lg:w-1/2 font-semibold font-publicSans border-black border-2 neo-brutal-shadow
+    transform -translate-x-1/2 -translate-y-1/2 ${
+      flip ? "transform-growth-minus" : "transform-growth-plus"
+    }  ${defaultColor}`}
+  >
+    {text}
+    <slot/>
+  </p>:
+  <div class={`w-full chamaleon cursor-pointer lg:w-1/2 `}>
+    {text}
+    <slot/>
+  </div>
+}
 <style>
   .transform-growth-plus {
 transform: scale(1) rotate(3deg);
