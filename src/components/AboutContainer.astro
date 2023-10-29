@@ -1,10 +1,10 @@
 ---
 import Card from "./Card.astro";
-import idea from '../images/idea.svg'
-import gears from '../images/gears.svg'
-import pets from '../images/pets.svg'
-import books from '../images/books.svg'
-import movie from '../images/movie.svg'
+import idea from "../images/idea.svg";
+import gears from "../images/gears.svg";
+import pets from "../images/pets.svg";
+import books from "../images/books.svg";
+import movie from "../images/movie.svg";
 export const colors = [
   "bg-pink-400",
   "bg-teal-400",
@@ -14,7 +14,9 @@ export const colors = [
 ];
 ---
 
-<div class=" p-5 md:p-7 text-xl md:text-3xl flex flex-col justify-center items-center">
+<div
+  class="p-5 md:p-7 text-xl md:text-3xl flex flex-col justify-center items-center"
+>
   <Card
     imageurl={idea}
     defaultColor={colors[1]}
@@ -24,7 +26,7 @@ export const colors = [
     imageurl={gears}
     defaultColor={colors[0]}
     flip
-    text={"I'm someone who values a deep understanding of technology, going beyond mere abstractions. I often dedicate a significant amount of my time to unravel how technologies like React function and the problems they aim to solve."}
+    text={"I like experimenting with new and cutting edge technologies like Astro and BunJs, contributing to open-source as and when I use the technology."}
   />
   <Card
     imageurl={movie}
@@ -39,5 +41,10 @@ export const colors = [
     flip
     text="I thoroughly enjoy reading, and I devote a significant amount of my time to this pastime. My literary interests encompass genres such as thrillers, science fiction, and classic literature. At the moment, I am engrossed in The Brothers Karamazov."
   />
-  <Card bg="bg-white" imageurl={pets} defaultColor={colors[4]} text="I 💖 cats 😸, but I own a dog 🐶 and I 💖 him too." />
+  <Card
+    bg="bg-white"
+    imageurl={pets}
+    defaultColor={colors[4]}
+    text="I 💖 cats 😸, but I own a dog 🐶 and I 💖 him too."
+  />
 </div>
