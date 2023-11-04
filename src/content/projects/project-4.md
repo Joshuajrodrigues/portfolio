@@ -1,5 +1,5 @@
 ---
-defaultColor: "bg-blue-400"
+defaultColor: "bg-teal-400"
 title: "Manga2epub4kindle"
 desp: "cbr/cbz manga to epub file convertor for kindle"
 tags: ["Nodejs", "Sharp"]

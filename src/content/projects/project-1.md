@@ -1,5 +1,5 @@
 ---
-defaultColor: "bg-teal-400"
+defaultColor: "bg-green-400"
 title: "Kuzina"
 desp: "Kitchen management system for the family."
 tags:
